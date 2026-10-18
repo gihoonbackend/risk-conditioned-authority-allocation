@@ -1,0 +1,40 @@
+{
+  "lead_speeds_mps": [
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "scenarios": [
+    "nominal",
+    "emergency"
+  ],
+  "architectures": [
+    "shared",
+    "separate"
+  ],
+  "aggregation": "population standard deviation (ddof=0), not random-seed uncertainty",
+  "resolved_configs": [
+    "data/simulation/raw/20260928T060553_082262Z_nominal_following_0e7d56/resolved_config.json",
+    "data/simulation/raw/20260928T060615_000234Z_nominal_following_6118cc/resolved_config.json",
+    "data/simulation/raw/20260928T060634_891593Z_nominal_following_fdfea6/resolved_config.json",
+    "data/simulation/raw/20260928T060654_865704Z_nominal_following_dab818/resolved_config.json",
+    "data/simulation/raw/20260928T060715_193381Z_nominal_following_bb3c42/resolved_config.json",
+    "data/simulation/raw/20260928T060735_577598Z_nominal_following_3816e2/resolved_config.json",
+    "data/simulation/raw/20260928T060755_824531Z_nominal_following_41a99b/resolved_config.json",
+    "data/simulation/raw/20260928T060816_242764Z_nominal_following_3f5142/resolved_config.json",
+    "data/simulation/raw/20260928T060836_420074Z_nominal_following_30e94d/resolved_config.json",
+    "data/simulation/raw/20260928T060856_797178Z_nominal_following_d2e9fc/resolved_config.json",
+    "data/simulation/raw/20260928T060917_256256Z_emergency_stop_c42e81/resolved_config.json",
+    "data/simulation/raw/20260928T060937_513603Z_emergency_stop_186237/resolved_config.json",
+    "data/simulation/raw/20260928T060957_745617Z_emergency_stop_6baad3/resolved_config.json",
+    "data/simulation/raw/20260928T061017_868622Z_emergency_stop_b88b47/resolved_config.json",
+    "data/simulation/raw/20260928T061038_057148Z_emergency_stop_8ca96f/resolved_config.json",
+    "data/simulation/raw/20260928T061058_283614Z_emergency_stop_bd9578/resolved_config.json",
+    "data/simulation/raw/20260928T061118_471036Z_emergency_stop_b2b9f3/resolved_config.json",
+    "data/simulation/raw/20260928T061138_865496Z_emergency_stop_a82b30/resolved_config.json",
+    "data/simulation/raw/20260928T061158_983288Z_emergency_stop_697447/resolved_config.json",
+    "data/simulation/raw/20260928T061219_338811Z_emergency_stop_95935d/resolved_config.json"
+  ]
+}

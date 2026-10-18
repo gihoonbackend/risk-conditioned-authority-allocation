@@ -1,0 +1,16 @@
+{
+  "path_name": "path1",
+  "path_label": "Tight Curve",
+  "image_path": "vlm/path_snapshots/path1_tight_curve.png",
+  "meta_path": "vlm/path_snapshots/path1_tight_curve.json",
+  "user_prompt": "Analyze this driving scene for the upcoming path segment and recommend hybrid-controller risk parameters.\n\nPath information:\n- path_name: path1\n- path_label: Tight Curve\n\nSensor snapshot:\n- distance_m: 32.370480\n- distance_ref_m: 29.688523\n- gap_error_m: 2.681957\n- ego_speed_mps: 13.114471\n- lead_speed_mps: 13.124951\n- relative_speed_mps: -0.010480\n- kappa: 0.005259\n- ey_m: 0.218411\n- epsi_rad: -0.048576\n\nInterpretation guidance:\n- Treat the numeric kappa value as the primary curvature cue; do not overrule it unless the image clearly shows otherwise.\n- If kappa is near zero and the road visually looks straight, reduce w_kappa noticeably.\n- If kappa is materially larger than neighboring paths or the scene clearly bends, increase w_kappa.\n- Increase distance or relative-speed weighting if the lead vehicle gap appears safety-critical.\n- Increase uncertainty weighting only if visibility or lane confidence looks degraded.\n- If visibility is normal, keep w_s + w_p low.\n\nGoal:\nProvide context-aware risk weights for this path segment only.\nReturn JSON only.",
+  "sensor_snapshot": {
+    "distance_m": 32.370480443337975,
+    "distance_ref_m": 29.688523178980333,
+    "ego_speed_mps": 13.114471066547917,
+    "lead_speed_mps": 13.124951106198969,
+    "kappa": 0.005259094434070087,
+    "ey_m": 0.21841057717264192,
+    "epsi_rad": -0.04857554953138532
+  }
+}

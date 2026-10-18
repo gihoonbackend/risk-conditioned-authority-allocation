@@ -1,0 +1,23 @@
+{
+  "sequence_id": "recorded_sequence",
+  "rows": 236504,
+  "numeric_token_sha256": "2f65f8948aa2002daf3f4d98831cd38f14d1b4da3d5510851a335485ac4992f2",
+  "source_file_sha256": "352988ec9d274f26869dc74c68a4d9bfe30addaf0b2373527e48ef5e02049e8c",
+  "released_file_sha256": "3a568b1f8a369c9cbc023abb0a0250c4bc6674d52afe75398a5defda5f9ec562",
+  "source_encoding": "cp949",
+  "public_encoding": "UTF-8 gzip CSV",
+  "removed_categories": [
+    "logger user value",
+    "absolute recording date/time",
+    "device/platform description",
+    "project/software internal identifiers",
+    "instrument metadata and model hierarchy paths"
+  ],
+  "retained_time": "original relative elapsed seconds; zero origin unchanged",
+  "numeric_transform": "none",
+  "smoothing_filtering_resampling": "none in raw export",
+  "gps_vin_plate_name_email_phone_columns_found": false,
+  "identifying_visual_media_included": false,
+  "redistribution_authorization": "LICENSE REVIEW REQUIRED",
+  "raw_schema_note": "Original trace_units fields were empty; sensor physical calibration/units require owner confirmation."
+}

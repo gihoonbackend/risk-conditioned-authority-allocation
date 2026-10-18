@@ -1,0 +1,24 @@
+{
+  "repository_version": "1.0.0",
+  "commit": null,
+  "commit_status": "not yet committed as a standalone public repository",
+  "experiment_version": "Canonical-D V3 VLM lateral gain",
+  "source_hashes": {
+    "experiment_version": "Canonical-D V3 VLM lateral gain",
+    "source_config_sha256": "ffa5c585bbcf4e100b23e6725466e713d1b7a135606272bed9e39c2927b5446f",
+    "source_vlm_sha256": "cf694e526e0b02dd0814c3bab7090bc9a5e2c9df0f5594a8360a867be1aa5464",
+    "source_checkpoint_sha256": "91f9634d7e5f5ed27c27ce82944ae339737ba1a7f906d13c2aa16e80aec5de16",
+    "source_path_reference_sha256": "583ce47326225e502d4c48128cfd6aaba14fb0d73faaf573553bddd5ebe31e22",
+    "source_git_commit": "ee3a9ad7987564805d8671f4c72a1097b1bcc504",
+    "main_batch": "20260928T055908_868958Z",
+    "variation_batch": "20260928T060553_058951Z"
+  },
+  "public_upload_ready": false,
+  "license_status": "LICENSE REVIEW REQUIRED",
+  "checkpoint_included": false,
+  "official_table_count": 6,
+  "official_figure_count": 5,
+  "archived_run_count": 36,
+  "inventory": "reproducibility/release_manifest_v1.0.0.json",
+  "checksums": "reproducibility/checksums.sha256"
+}

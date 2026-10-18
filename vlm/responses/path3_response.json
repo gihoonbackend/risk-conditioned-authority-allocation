@@ -1,0 +1,31 @@
+{
+  "path_name": "path3",
+  "path_label": "Straight",
+  "raw_response_text": "{\n  \"path_name\": \"path3\",\n  \"path_label\": \"Straight\",\n  \"weights\": {\n    \"w_d\": 0.38,\n    \"w_v\": 0.34,\n    \"w_kappa\": 0.05,\n    \"w_s\": 0.13,\n    \"w_p\": 0.1\n  },\n  \"context_summary\": \"Road geometry appears straight and kappa is ~0, so curvature risk is minimal. Lead vehicle is present at ~32.5 m with small positive gap error (~2.7 m) and very low relative speed (~0.07 m/s), so distance/closing-speed risk is moderate but not urgent. Visibility is somewhat degraded/hazy, though lane structure is still discernible; keep uncertainty weights present but non-dominant and maintain smoothness vs prior.\",\n  \"confidence\": 0.66\n}",
+  "parsed_response": {
+    "path_name": "path3",
+    "path_label": "Straight",
+    "weights": {
+      "w_d": 0.38,
+      "w_v": 0.34,
+      "w_kappa": 0.05,
+      "w_s": 0.13,
+      "w_p": 0.1
+    },
+    "context_summary": "Road geometry appears straight and kappa is ~0, so curvature risk is minimal. Lead vehicle is present at ~32.5 m with small positive gap error (~2.7 m) and very low relative speed (~0.07 m/s), so distance/closing-speed risk is moderate but not urgent. Visibility is somewhat degraded/hazy, though lane structure is still discernible; keep uncertainty weights present but non-dominant and maintain smoothness vs prior.",
+    "confidence": 0.66
+  },
+  "sanitized_response": {
+    "path_name": "path3",
+    "path_label": "Straight",
+    "weights": {
+      "w_d": 0.38,
+      "w_v": 0.34,
+      "w_kappa": 0.05,
+      "w_s": 0.13,
+      "w_p": 0.1
+    },
+    "context_summary": "Road geometry appears straight and kappa is ~0, so curvature risk is minimal. Lead vehicle is present at ~32.5 m with small positive gap error (~2.7 m) and very low relative speed (~0.07 m/s), so distance/closing-speed risk is moderate but not urgent. Visibility is somewhat degraded/hazy, though lane structure is still discernible; keep uncertainty weights present but non-dominant and maintain smoothness vs prior.",
+    "confidence": 0.66
+  }
+}

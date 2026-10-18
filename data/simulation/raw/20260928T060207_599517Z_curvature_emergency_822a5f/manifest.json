@@ -1,0 +1,102 @@
+{
+  "status": "passed_with_warnings",
+  "started_at_utc": "2026-09-28T06:02:07.599517+00:00",
+  "finished_at_utc": "2026-09-28T06:02:27.415481+00:00",
+  "versions": {
+    "python": "3.8.10 (default, Mar 18 2025, 20:04:55) \n[GCC 9.4.0]",
+    "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.29",
+    "numpy": "1.23.5",
+    "pandas": "2.0.3",
+    "torch": "2.4.1+cu118",
+    "matplotlib": "3.7.5"
+  },
+  "checks": {
+    "completed_without_exception": true,
+    "numeric_finite_except_undefined_TTC": true,
+    "TTC_validity_consistent": true,
+    "complete_control_sample_count": true,
+    "single_alpha_source": true,
+    "alpha_in_unit_interval": true,
+    "risk_sum_matches_logged_contributions": true,
+    "alpha_mapping_matches_logged_risk": true,
+    "channel_alpha_mapping_matches_logged_channel_risks": true,
+    "normalized_risks_in_unit_interval": true,
+    "lateral_vlm_gain_mapping_matches_logged_law": true,
+    "channel_alpha_architecture": true,
+    "evaluation_paths_resolved_spatially": true,
+    "no_out_of_radius_path_resolution": true,
+    "path1_entry_when_required": true,
+    "checkpoint_loaded_and_verified": true,
+    "one_frame_per_control_step": true,
+    "sampling_interval": true,
+    "simulation_duration": true,
+    "logged_sample_span": true,
+    "controller_output_bounds": true,
+    "residual_authority_guard_matches_logged_law": true
+  },
+  "warnings": [
+    "Persistent evaluation saturation: evaluation/ax_mpc"
+  ],
+  "run_signature": "4ab903fb07be42513b38d53603e1ef9f7fed4af97ccd4954232f4b5fba6874c4",
+  "carla": {
+    "server_version": "0.9.15-290-gee3a9ad79-dirty",
+    "client_version": "0.9.15-290-gee3a9ad79",
+    "version_strings_identical": false,
+    "map": "Carla/Maps/Town04",
+    "opendrive_sha256": "4dddd1560ab7812b0e89cd4a523d8b6f2b93947eafb496d9eeb83cc772116c85",
+    "world_settings": "WorldSettings(synchronous_mode=True,no_rendering_mode=True,fixed_delta_seconds=0.05,substepping=True,max_substep_delta_time=0.01,max_substeps=10,max_culling_distance=0,deterministic_ragdolls=True)",
+    "weather": "WeatherParameters(cloudiness=5.000000, precipitation=0.000000, precipitation_deposits=0.000000, wind_intensity=10.000000, sun_azimuth_angle=-1.000000, sun_altitude_angle=45.000000, fog_density=2.000000, fog_distance=0.750000, fog_falloff=0.100000, wetness=0.000000, scattering_intensity=1.000000, mie_scattering_scale=0.030000, rayleigh_scattering_scale=0.033100, dust_storm=0.000000)",
+    "traffic_manager_used": false,
+    "stochastic_seed_api_used": false
+  },
+  "execution": {
+    "actual_logged_duration_s": 100.00000149011612,
+    "completed_simulation_duration_s": 100.00000149011612,
+    "checkpoint_loaded": true,
+    "spawn": {
+      "pre_spawn_removed_vehicle_ids": [],
+      "lead_attempts": 1,
+      "ego_attempts": 1
+    },
+    "center_to_bumper_offset_m": 3.705369472503662,
+    "initial_frame": 66730,
+    "simulation_timestamp_origin": 15.514185309875757,
+    "evaluation_start_s": 25.0,
+    "evaluation_end_s": null,
+    "controller_samples": 2000,
+    "first_path1_time_s": 46.800000697374344,
+    "logged_sample_span_s": 99.95000148937106,
+    "wall_duration_s": 19.27046380797401
+  },
+  "archived_command": [
+    "python3",
+    "revision_experiments/canonical_d_vlm_lateral_gain/run_vlm_lateral_gain.py",
+    "--execute-main"
+  ],
+  "command_status": "exact archived argv except executable basename; historical working directory removed",
+  "source_git_commit": "ee3a9ad7987564805d8671f4c72a1097b1bcc504",
+  "source_tree_dirty": true,
+  "source_sha256": {
+    "src/longitudinal_ctg.cpp": "a641dce7737cccadf1ce02a35b7afc50611863cbc4797e8fa55d5aa02691e3f7",
+    "src/longitudinal_mpc.cpp": "39f8bf44acd4d2246634d5f44431e87df8faaf445f712d477970cf2048b440a4",
+    "src/lateral_lqr.cpp": "31e9b26178d26947edd33f5ea60c93639fd59a87379f9b5b9e9063b508b27db1",
+    "include/agentix_types.hpp": "041c628837a5a2a96ff0472fbe042d8f5730f17889676978899872593317366f",
+    "include/agentix_utils.hpp": "c4fa6c6f8e85cfc9b8a22270ac7295219f34d6f6c8d1c777fa6c0bee62c4634d",
+    "include/lateral_lqr.hpp": "9f005b5c6935308723d7d9101a4351516ba8a66e31e5b2bf0f72e52e6fffe3ae",
+    "include/longitudinal_ctg.hpp": "d11e60640d707ef21278b8cdd20733618b57fbc8d26df4ccaf6364f8d78f7ac2",
+    "include/longitudinal_mpc.hpp": "f95d053ce548634ff9d330e2fecc06e070b733f9daeb8c5a96f6c7767697f4e1",
+    "revision_experiments/canonical/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "revision_experiments/canonical/common.py": "d74a5c80586d3fac36796575ee3a2ed4a0beb02e3a9a07eddbc5b8e4d8cf27a7",
+    "revision_experiments/canonical/control.py": "36f159bed891b5338133000abb14fae506de65164e5054d2b3e30c3b4f45e5c7",
+    "revision_experiments/canonical/metrics.py": "17ffe68d4f295bd54df6ac4d24b1da76b62bf17dd63b3bf81fba9990a078ae6e",
+    "revision_experiments/canonical/preflight.py": "8ea6b46ee4775488df468f6a91f1164c9e0140a47260a46fe832e93c95bd299f",
+    "revision_experiments/canonical/report.py": "abfc28954ad7778171cf2d63e5762a97a1689ccb5cb6f7070d93ff26a0a1b7db",
+    "revision_experiments/canonical/risk.py": "20934eb3ce039c7f78c4e18b80971e9beb5f3959a5abbaac131674040b39c409",
+    "revision_experiments/canonical/run.py": "cefee991c6cfbcd5eac8348cb0b5e8aa085223aee8a2cc7c3f205972c801c951",
+    "revision_experiments/canonical/test_canonical.py": "b06505d15dacb6ff4c200dc6821a2d976826395fc23ee398ec4493bf885d0a32",
+    "revision_experiments/canonical/test_vlm_lateral_gain.py": "e12d481a3a61df4d2f6fa51bb0f29b29f56888607c3fde6ac6c2fa3f09dd7576",
+    "revision_experiments/canonical/controller_bridge.cpp": "1ee414cf93a934d679e0b140dddf77d4621723c373acc00d29333d889d4ff413"
+  },
+  "config": "data/simulation/raw/20260928T060207_599517Z_curvature_emergency_822a5f/resolved_config.json",
+  "raw": "data/simulation/raw/20260928T060207_599517Z_curvature_emergency_822a5f/raw.csv.gz"
+}

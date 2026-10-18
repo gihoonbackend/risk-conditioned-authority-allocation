@@ -1,0 +1,33 @@
+scenario_id,scenario_label,architecture_id,architecture_label,comparison,mean,median,p95,max,abs_gt_0p1_ratio,abs_gt_0p2_ratio
+nominal,Nominal Following,system1,CTG + LQR,shared_minus_lon,0.27269762833119626,0.232173225735957,0.3533745147344067,0.3700550893531024,1.0,1.0
+nominal,Nominal Following,system1,CTG + LQR,shared_minus_lat,0.27269762833119626,0.232173225735957,0.3533745147344067,0.3700550893531024,1.0,1.0
+nominal,Nominal Following,system2,MPC + LQR/RL,shared_minus_lon,-0.7688538864231023,-0.8093298604611125,-0.6910154312458497,-0.6766521744843175,1.0,1.0
+nominal,Nominal Following,system2,MPC + LQR/RL,shared_minus_lat,-0.7688538864231023,-0.8093298604611125,-0.6910154312458497,-0.6766521744843175,1.0,1.0
+nominal,Nominal Following,shared,Shared-alpha,shared_minus_lon,0.0,0.0,0.0,0.0,0.0,0.0
+nominal,Nominal Following,shared,Shared-alpha,shared_minus_lat,0.0,0.0,0.0,0.0,0.0,0.0
+nominal,Nominal Following,separate,Separate-alpha,shared_minus_lon,0.030651334800635397,-0.014215622130872754,0.10915586061620274,0.11009524307289528,0.396,0.0
+nominal,Nominal Following,separate,Separate-alpha,shared_minus_lat,-0.16108129631882528,0.1171322344691218,0.13880721198961532,0.1461847752848664,0.9873333333333333,0.4013333333333333
+emergency,Emergency Stop,system1,CTG + LQR,shared_minus_lon,0.482851549915067,0.49232594909969735,0.8064543058598328,0.8664378723417198,1.0,1.0
+emergency,Emergency Stop,system1,CTG + LQR,shared_minus_lat,0.482851549915067,0.49232594909969735,0.8064543058598328,0.8664378723417198,1.0,1.0
+emergency,Emergency Stop,system2,MPC + LQR/RL,shared_minus_lon,-0.5119894117037024,-0.5076745571105603,-0.1789404006874446,-0.13196660850713338,1.0,0.9346666666666666
+emergency,Emergency Stop,system2,MPC + LQR/RL,shared_minus_lat,-0.5119894117037024,-0.5076745571105603,-0.1789404006874446,-0.13196660850713338,1.0,0.9346666666666666
+emergency,Emergency Stop,shared,Shared-alpha,shared_minus_lon,0.0,0.0,0.0,0.0,0.0,0.0
+emergency,Emergency Stop,shared,Shared-alpha,shared_minus_lat,0.0,0.0,0.0,0.0,0.0,0.0
+emergency,Emergency Stop,separate,Separate-alpha,shared_minus_lon,-0.038472288394067654,-0.04280748589599484,-0.014231845609427222,-0.011981015337982515,0.0,0.0
+emergency,Emergency Stop,separate,Separate-alpha,shared_minus_lat,0.4157399036780054,0.4164575528613186,0.7433902041332312,0.7918263288887765,1.0,0.854
+curvature_emergency,Curvature + Emergency,system1,CTG + LQR,shared_minus_lon,0.5096467435837507,0.6105901502506662,0.8772226603958159,0.9162384673808738,1.0,1.0
+curvature_emergency,Curvature + Emergency,system1,CTG + LQR,shared_minus_lat,0.5096467435837507,0.6105901502506662,0.8772226603958159,0.9162384673808738,1.0,1.0
+curvature_emergency,Curvature + Emergency,system2,MPC + LQR/RL,shared_minus_lon,-0.5069683286830259,-0.39230919413643417,-0.09825001168763431,-0.08223164891600399,0.9493333333333334,0.9013333333333333
+curvature_emergency,Curvature + Emergency,system2,MPC + LQR/RL,shared_minus_lat,-0.5069683286830259,-0.39230919413643417,-0.09825001168763431,-0.08223164891600399,0.9493333333333334,0.9013333333333333
+curvature_emergency,Curvature + Emergency,shared,Shared-alpha,shared_minus_lon,0.0,0.0,0.0,0.0,0.0,0.0
+curvature_emergency,Curvature + Emergency,shared,Shared-alpha,shared_minus_lat,0.0,0.0,0.0,0.0,0.0,0.0
+curvature_emergency,Curvature + Emergency,separate,Separate-alpha,shared_minus_lon,0.04614308482931191,0.07978631506367756,0.10927759233445607,0.11163521078787292,0.072,0.0
+curvature_emergency,Curvature + Emergency,separate,Separate-alpha,shared_minus_lat,-0.15442982931973437,-0.287477357847828,0.13880721198961532,0.1461833205230414,0.9153333333333333,0.5573333333333333
+high_curvature,High Curvature / Low Longitudinal Risk,system1,CTG + LQR,shared_minus_lon,0.310216692343991,0.3097930805392007,0.3234875666980285,0.3250205847008285,1.0,1.0
+high_curvature,High Curvature / Low Longitudinal Risk,system1,CTG + LQR,shared_minus_lat,0.310216692343991,0.3097930805392007,0.3234875666980285,0.3250205847008285,1.0,1.0
+high_curvature,High Curvature / Low Longitudinal Risk,system2,MPC + LQR/RL,shared_minus_lon,-0.7152203825511992,-0.7173316350207194,-0.6936997934213861,-0.6908561389376688,1.0,1.0
+high_curvature,High Curvature / Low Longitudinal Risk,system2,MPC + LQR/RL,shared_minus_lat,-0.7152203825511992,-0.7173316350207194,-0.6936997934213861,-0.6908561389376688,1.0,1.0
+high_curvature,High Curvature / Low Longitudinal Risk,shared,Shared-alpha,shared_minus_lon,0.0,0.0,0.0,0.0,0.0,0.0
+high_curvature,High Curvature / Low Longitudinal Risk,shared,Shared-alpha,shared_minus_lat,0.0,0.0,0.0,0.0,0.0,0.0
+high_curvature,High Curvature / Low Longitudinal Risk,separate,Separate-alpha,shared_minus_lon,0.10773303784740194,0.10771815913643071,0.10882153791860284,0.10893798347106493,1.0,0.0
+high_curvature,High Curvature / Low Longitudinal Risk,separate,Separate-alpha,shared_minus_lat,-0.6041886771990369,-0.6047012884259002,-0.5928279152606155,-0.591458263694437,1.0,1.0

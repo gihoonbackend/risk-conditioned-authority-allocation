@@ -1,0 +1,2028 @@
+[
+  {
+    "files": [
+      "archive/development/table_old_vs_new_separate.csv"
+    ],
+    "columns": {
+      "Scenario": {
+        "unit": "text/hash",
+        "description": "Scenario identifies the run, row variable, status or original configuration digest.",
+        "source": "development",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "Metric": {
+        "unit": "text/hash",
+        "description": "Metric identifies the run, row variable, status or original configuration digest.",
+        "source": "development",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "Old Separate v2": {
+        "unit": "row-dependent",
+        "description": "Development-only value of metric named in same row; excluded from official results.",
+        "source": "development",
+        "processing": "Historical comparison copied unchanged."
+      },
+      "New Separate v3": {
+        "unit": "row-dependent",
+        "description": "Development-only value of metric named in same row; excluded from official results.",
+        "source": "development",
+        "processing": "Historical comparison copied unchanged."
+      },
+      "Change (new-old)": {
+        "unit": "row-dependent",
+        "description": "Development-only value of metric named in same row; excluded from official results.",
+        "source": "development",
+        "processing": "Historical comparison copied unchanged."
+      }
+    }
+  },
+  {
+    "files": [
+      "data/simulation/processed/cross_channel_activation.csv"
+    ],
+    "columns": {
+      "scenario_id": {
+        "unit": "text/hash",
+        "description": "scenario id identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "scenario_label": {
+        "unit": "text/hash",
+        "description": "scenario label identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "architecture_id": {
+        "unit": "text/hash",
+        "description": "architecture id identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "architecture_label": {
+        "unit": "text/hash",
+        "description": "architecture label identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "comparison": {
+        "unit": "text/hash",
+        "description": "comparison identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "mean": {
+        "unit": "row-dependent",
+        "description": "mean of the variable named in metric/comparison column.",
+        "source": "archived V3 logs/results",
+        "processing": "Across five condition values for variation; across evaluation samples for cross-channel differences; std uses ddof=0."
+      },
+      "median": {
+        "unit": "row-dependent",
+        "description": "median of the variable named in metric/comparison column.",
+        "source": "archived V3 logs/results",
+        "processing": "Across five condition values for variation; across evaluation samples for cross-channel differences; std uses ddof=0."
+      },
+      "p95": {
+        "unit": "row-dependent",
+        "description": "p95 of the variable named in metric/comparison column.",
+        "source": "archived V3 logs/results",
+        "processing": "Across five condition values for variation; across evaluation samples for cross-channel differences; std uses ddof=0."
+      },
+      "max": {
+        "unit": "row-dependent",
+        "description": "max of the variable named in metric/comparison column.",
+        "source": "archived V3 logs/results",
+        "processing": "Across five condition values for variation; across evaluation samples for cross-channel differences; std uses ddof=0."
+      },
+      "abs_gt_0p1_ratio": {
+        "unit": "1",
+        "description": "Fraction with absolute shared-minus-channel authority difference exceeding named threshold.",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run evaluation samples."
+      },
+      "abs_gt_0p2_ratio": {
+        "unit": "1",
+        "description": "Fraction with absolute shared-minus-channel authority difference exceeding named threshold.",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run evaluation samples."
+      }
+    }
+  },
+  {
+    "files": [
+      "data/simulation/processed/formula_smoke.csv"
+    ],
+    "columns": {
+      "path": {
+        "unit": "text/hash",
+        "description": "path identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "raw_w_kappa": {
+        "unit": "1",
+        "description": "Formula smoke diagnostic: raw w kappa.",
+        "source": "archived V3 logs/results",
+        "processing": "Archived analytic/smoke input or output; not a performance metric."
+      },
+      "max_raw_w_kappa": {
+        "unit": "1",
+        "description": "Formula smoke diagnostic: max raw w kappa.",
+        "source": "archived V3 logs/results",
+        "processing": "Archived analytic/smoke input or output; not a performance metric."
+      },
+      "expected_g_kappa": {
+        "unit": "1",
+        "description": "Formula smoke diagnostic: expected g kappa.",
+        "source": "archived V3 logs/results",
+        "processing": "Archived analytic/smoke input or output; not a performance metric."
+      },
+      "actual_g_kappa": {
+        "unit": "1",
+        "description": "Formula smoke diagnostic: actual g kappa.",
+        "source": "archived V3 logs/results",
+        "processing": "Archived analytic/smoke input or output; not a performance metric."
+      },
+      "expected_R_lat_at_R_kappa_1": {
+        "unit": "1",
+        "description": "Formula smoke diagnostic: expected R lat at R kappa 1.",
+        "source": "archived V3 logs/results",
+        "processing": "Archived analytic/smoke input or output; not a performance metric."
+      },
+      "actual_R_lat_at_R_kappa_1": {
+        "unit": "1",
+        "description": "Formula smoke diagnostic: actual R lat at R kappa 1.",
+        "source": "archived V3 logs/results",
+        "processing": "Archived analytic/smoke input or output; not a performance metric."
+      },
+      "expected_alpha_lat": {
+        "unit": "1",
+        "description": "Formula smoke diagnostic: expected alpha lat.",
+        "source": "archived V3 logs/results",
+        "processing": "Archived analytic/smoke input or output; not a performance metric."
+      },
+      "actual_alpha_lat": {
+        "unit": "1",
+        "description": "Formula smoke diagnostic: actual alpha lat.",
+        "source": "archived V3 logs/results",
+        "processing": "Archived analytic/smoke input or output; not a performance metric."
+      },
+      "zero_R_lat": {
+        "unit": "1",
+        "description": "Formula smoke diagnostic: zero R lat.",
+        "source": "archived V3 logs/results",
+        "processing": "Archived analytic/smoke input or output; not a performance metric."
+      },
+      "all_checks_passed": {
+        "unit": "bool",
+        "description": "Archived validation predicate: all checks passed.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      }
+    }
+  },
+  {
+    "files": [
+      "data/simulation/processed/main_metrics.csv",
+      "data/simulation/processed/variation_individual_metrics.csv"
+    ],
+    "columns": {
+      "job_id": {
+        "unit": "text/hash",
+        "description": "job id identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "scenario_id": {
+        "unit": "text/hash",
+        "description": "scenario id identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "scenario_label": {
+        "unit": "text/hash",
+        "description": "scenario label identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "architecture_id": {
+        "unit": "text/hash",
+        "description": "architecture id identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "architecture_label": {
+        "unit": "text/hash",
+        "description": "architecture label identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "status": {
+        "unit": "text/hash",
+        "description": "status identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "technical_checks_passed": {
+        "unit": "bool",
+        "description": "Archived validation predicate: technical checks passed.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "warnings": {
+        "unit": "text/hash",
+        "description": "warnings identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "run_dir": {
+        "unit": "text/hash",
+        "description": "run dir identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "config_sha256": {
+        "unit": "text/hash",
+        "description": "config sha256 identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "invariant_config_sha256": {
+        "unit": "text/hash",
+        "description": "invariant config sha256 identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "MAE_d_m": {
+        "unit": "m",
+        "description": "MAE d m; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "RMS_d_m": {
+        "unit": "m",
+        "description": "RMS d m; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "MAE_relative_speed_mps": {
+        "unit": "m/s",
+        "description": "MAE relative speed mps; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "jerk_MAE_mps3": {
+        "unit": "m/s^3",
+        "description": "jerk MAE mps3; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "jerk_RMS_mps3": {
+        "unit": "m/s^3",
+        "description": "jerk RMS mps3; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "min_TTC_s": {
+        "unit": "s",
+        "description": "min TTC s; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "acceleration_RMS_mps2": {
+        "unit": "m/s^2",
+        "description": "acceleration RMS mps2; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "MAE_ey_m": {
+        "unit": "m",
+        "description": "MAE ey m; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "RMS_ey_m": {
+        "unit": "m",
+        "description": "RMS ey m; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "MAE_epsi_rad": {
+        "unit": "rad",
+        "description": "MAE epsi rad; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "RMS_epsi_rad": {
+        "unit": "rad",
+        "description": "RMS epsi rad; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "steering_applied_equivalent_RMS_rad": {
+        "unit": "rad",
+        "description": "steering applied equivalent RMS rad; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "steering_rate_RMS_radps": {
+        "unit": "rad/s",
+        "description": "steering rate RMS radps; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "alpha_shared_mean": {
+        "unit": "1",
+        "description": "Evaluation-sample mean of indicated authority; path suffix restricts samples to that path.",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run evaluation; empty path subsets are missing."
+      },
+      "alpha_lon_mean": {
+        "unit": "1",
+        "description": "Evaluation-sample mean of indicated authority; path suffix restricts samples to that path.",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run evaluation; empty path subsets are missing."
+      },
+      "alpha_lat_mean": {
+        "unit": "1",
+        "description": "Evaluation-sample mean of indicated authority; path suffix restricts samples to that path.",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run evaluation; empty path subsets are missing."
+      },
+      "alpha_shared_gt_0p5_ratio": {
+        "unit": "1",
+        "description": "Fraction of evaluation samples with indicated alpha strictly above named threshold.",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run evaluation; empty path subsets are missing."
+      },
+      "alpha_lon_gt_0p5_ratio": {
+        "unit": "1",
+        "description": "Fraction of evaluation samples with indicated alpha strictly above named threshold.",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run evaluation; empty path subsets are missing."
+      },
+      "alpha_lat_gt_0p5_ratio": {
+        "unit": "1",
+        "description": "Fraction of evaluation samples with indicated alpha strictly above named threshold.",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run evaluation; empty path subsets are missing."
+      },
+      "alpha_shared_gt_0p8_ratio": {
+        "unit": "1",
+        "description": "Fraction of evaluation samples with indicated alpha strictly above named threshold.",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run evaluation; empty path subsets are missing."
+      },
+      "alpha_lon_gt_0p8_ratio": {
+        "unit": "1",
+        "description": "Fraction of evaluation samples with indicated alpha strictly above named threshold.",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run evaluation; empty path subsets are missing."
+      },
+      "alpha_lat_gt_0p8_ratio": {
+        "unit": "1",
+        "description": "Fraction of evaluation samples with indicated alpha strictly above named threshold.",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run evaluation; empty path subsets are missing."
+      },
+      "R_lon_mean": {
+        "unit": "1",
+        "description": "Evaluation-sample mean of R_lon",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run mean."
+      },
+      "R_lat_mean": {
+        "unit": "1",
+        "description": "Evaluation-sample mean of R_lat",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run mean."
+      },
+      "R_kappa_mean": {
+        "unit": "1",
+        "description": "Evaluation-sample mean of R_kappa",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run mean."
+      },
+      "g_kappa_mean": {
+        "unit": "1",
+        "description": "Evaluation-sample mean of g_kappa",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run mean."
+      },
+      "alpha_lat_mean_path1": {
+        "unit": "1",
+        "description": "Evaluation-sample mean of indicated authority; path suffix restricts samples to that path.",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run evaluation; empty path subsets are missing."
+      },
+      "alpha_lat_mean_path2": {
+        "unit": "1",
+        "description": "Evaluation-sample mean of indicated authority; path suffix restricts samples to that path.",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run evaluation; empty path subsets are missing."
+      },
+      "alpha_lat_mean_path3": {
+        "unit": "1",
+        "description": "Evaluation-sample mean of indicated authority; path suffix restricts samples to that path.",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run evaluation; empty path subsets are missing."
+      }
+    }
+  },
+  {
+    "files": [
+      "data/simulation/processed/technical_validation.csv"
+    ],
+    "columns": {
+      "job_id": {
+        "unit": "text/hash",
+        "description": "job id identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "scenario_id": {
+        "unit": "text/hash",
+        "description": "scenario id identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "architecture_id": {
+        "unit": "text/hash",
+        "description": "architecture id identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "run_dir": {
+        "unit": "text/hash",
+        "description": "run dir identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "manifest_status": {
+        "unit": "text/hash",
+        "description": "manifest status identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "technical_checks_passed": {
+        "unit": "bool",
+        "description": "Archived validation predicate: technical checks passed.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "completed_without_exception": {
+        "unit": "bool",
+        "description": "Archived validation predicate: completed without exception.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "numeric_finite_except_undefined_TTC": {
+        "unit": "bool",
+        "description": "Archived validation predicate: numeric finite except undefined TTC.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "TTC_validity_consistent": {
+        "unit": "bool",
+        "description": "Archived validation predicate: TTC validity consistent.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "complete_control_sample_count": {
+        "unit": "bool",
+        "description": "Archived validation predicate: complete control sample count.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "single_alpha_source": {
+        "unit": "bool",
+        "description": "Archived validation predicate: single alpha source.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "alpha_in_unit_interval": {
+        "unit": "bool",
+        "description": "Archived validation predicate: alpha in unit interval.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "risk_sum_matches_logged_contributions": {
+        "unit": "bool",
+        "description": "Archived validation predicate: risk sum matches logged contributions.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "alpha_mapping_matches_logged_risk": {
+        "unit": "bool",
+        "description": "Archived validation predicate: alpha mapping matches logged risk.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "channel_alpha_mapping_matches_logged_channel_risks": {
+        "unit": "bool",
+        "description": "Archived validation predicate: channel alpha mapping matches logged channel risks.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "normalized_risks_in_unit_interval": {
+        "unit": "bool",
+        "description": "Archived validation predicate: normalized risks in unit interval.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "lateral_vlm_gain_mapping_matches_logged_law": {
+        "unit": "bool",
+        "description": "Archived validation predicate: lateral vlm gain mapping matches logged law.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "channel_alpha_architecture": {
+        "unit": "bool",
+        "description": "Archived validation predicate: channel alpha architecture.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "evaluation_paths_resolved_spatially": {
+        "unit": "bool",
+        "description": "Archived validation predicate: evaluation paths resolved spatially.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "no_out_of_radius_path_resolution": {
+        "unit": "bool",
+        "description": "Archived validation predicate: no out of radius path resolution.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "path1_entry_when_required": {
+        "unit": "bool",
+        "description": "Archived validation predicate: path1 entry when required.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "checkpoint_loaded_and_verified": {
+        "unit": "bool",
+        "description": "Archived validation predicate: checkpoint loaded and verified.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "one_frame_per_control_step": {
+        "unit": "bool",
+        "description": "Archived validation predicate: one frame per control step.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "sampling_interval": {
+        "unit": "bool",
+        "description": "Archived validation predicate: sampling interval.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "simulation_duration": {
+        "unit": "bool",
+        "description": "Archived validation predicate: simulation duration.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "logged_sample_span": {
+        "unit": "bool",
+        "description": "Archived validation predicate: logged sample span.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "controller_output_bounds": {
+        "unit": "bool",
+        "description": "Archived validation predicate: controller output bounds.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      },
+      "residual_authority_guard_matches_logged_law": {
+        "unit": "bool",
+        "description": "Archived validation predicate: residual authority guard matches logged law.",
+        "source": "archived V3 logs/results",
+        "processing": "True means the named runtime/metrics.py check passed; not a control-performance score."
+      }
+    }
+  },
+  {
+    "files": [
+      "data/simulation/processed/variation_mean_std.csv",
+      "data/tables/table_controlled_variation.csv"
+    ],
+    "columns": {
+      "scenario_id": {
+        "unit": "text/hash",
+        "description": "scenario id identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "scenario_label": {
+        "unit": "text/hash",
+        "description": "scenario label identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "architecture_id": {
+        "unit": "text/hash",
+        "description": "architecture id identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "architecture_label": {
+        "unit": "text/hash",
+        "description": "architecture label identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "metric": {
+        "unit": "text/hash",
+        "description": "metric identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "n_controlled_conditions": {
+        "unit": "count",
+        "description": "Sample count or number of nonmissing controlled conditions, as named.",
+        "source": "archived V3 logs/results",
+        "processing": "Count; no imputation."
+      },
+      "mean": {
+        "unit": "row-dependent",
+        "description": "mean of the variable named in metric/comparison column.",
+        "source": "archived V3 logs/results",
+        "processing": "Across five condition values for variation; across evaluation samples for cross-channel differences; std uses ddof=0."
+      },
+      "std_population": {
+        "unit": "row-dependent",
+        "description": "std_population of the variable named in metric/comparison column.",
+        "source": "archived V3 logs/results",
+        "processing": "Across five condition values for variation; across evaluation samples for cross-channel differences; std uses ddof=0."
+      },
+      "min": {
+        "unit": "row-dependent",
+        "description": "min of the variable named in metric/comparison column.",
+        "source": "archived V3 logs/results",
+        "processing": "Across five condition values for variation; across evaluation samples for cross-channel differences; std uses ddof=0."
+      },
+      "max": {
+        "unit": "row-dependent",
+        "description": "max of the variable named in metric/comparison column.",
+        "source": "archived V3 logs/results",
+        "processing": "Across five condition values for variation; across evaluation samples for cross-channel differences; std uses ddof=0."
+      }
+    }
+  },
+  {
+    "files": [
+      "data/simulation/raw/20260928T055928_055510Z_nominal_following_f5594b/raw.csv.gz",
+      "data/simulation/raw/20260928T055947_731172Z_nominal_following_490d26/raw.csv.gz",
+      "data/simulation/raw/20260928T060007_606915Z_nominal_following_d27707/raw.csv.gz",
+      "data/simulation/raw/20260928T060027_945211Z_nominal_following_96dfe1/raw.csv.gz",
+      "data/simulation/raw/20260928T060047_813047Z_emergency_stop_2840ea/raw.csv.gz",
+      "data/simulation/raw/20260928T060107_757885Z_emergency_stop_64133b/raw.csv.gz",
+      "data/simulation/raw/20260928T060127_699880Z_emergency_stop_bd230e/raw.csv.gz",
+      "data/simulation/raw/20260928T060147_594526Z_emergency_stop_56e95a/raw.csv.gz",
+      "data/simulation/raw/20260928T060207_599517Z_curvature_emergency_822a5f/raw.csv.gz",
+      "data/simulation/raw/20260928T060227_583489Z_curvature_emergency_08540a/raw.csv.gz",
+      "data/simulation/raw/20260928T060247_584602Z_curvature_emergency_3cb99f/raw.csv.gz",
+      "data/simulation/raw/20260928T060307_789593Z_curvature_emergency_b2f727/raw.csv.gz",
+      "data/simulation/raw/20260928T060327_820293Z_high_curvature_low_longitudinal_risk_dee62b/raw.csv.gz",
+      "data/simulation/raw/20260928T060345_459309Z_high_curvature_low_longitudinal_risk_b960ca/raw.csv.gz",
+      "data/simulation/raw/20260928T060402_991443Z_high_curvature_low_longitudinal_risk_68ec0e/raw.csv.gz",
+      "data/simulation/raw/20260928T060420_574975Z_high_curvature_low_longitudinal_risk_dc3cea/raw.csv.gz",
+      "data/simulation/raw/20260928T060553_082262Z_nominal_following_0e7d56/raw.csv.gz",
+      "data/simulation/raw/20260928T060615_000234Z_nominal_following_6118cc/raw.csv.gz",
+      "data/simulation/raw/20260928T060634_891593Z_nominal_following_fdfea6/raw.csv.gz",
+      "data/simulation/raw/20260928T060654_865704Z_nominal_following_dab818/raw.csv.gz",
+      "data/simulation/raw/20260928T060715_193381Z_nominal_following_bb3c42/raw.csv.gz",
+      "data/simulation/raw/20260928T060735_577598Z_nominal_following_3816e2/raw.csv.gz",
+      "data/simulation/raw/20260928T060755_824531Z_nominal_following_41a99b/raw.csv.gz",
+      "data/simulation/raw/20260928T060816_242764Z_nominal_following_3f5142/raw.csv.gz",
+      "data/simulation/raw/20260928T060836_420074Z_nominal_following_30e94d/raw.csv.gz",
+      "data/simulation/raw/20260928T060856_797178Z_nominal_following_d2e9fc/raw.csv.gz",
+      "data/simulation/raw/20260928T060917_256256Z_emergency_stop_c42e81/raw.csv.gz",
+      "data/simulation/raw/20260928T060937_513603Z_emergency_stop_186237/raw.csv.gz",
+      "data/simulation/raw/20260928T060957_745617Z_emergency_stop_6baad3/raw.csv.gz",
+      "data/simulation/raw/20260928T061017_868622Z_emergency_stop_b88b47/raw.csv.gz",
+      "data/simulation/raw/20260928T061038_057148Z_emergency_stop_8ca96f/raw.csv.gz",
+      "data/simulation/raw/20260928T061058_283614Z_emergency_stop_bd9578/raw.csv.gz",
+      "data/simulation/raw/20260928T061118_471036Z_emergency_stop_b2b9f3/raw.csv.gz",
+      "data/simulation/raw/20260928T061138_865496Z_emergency_stop_a82b30/raw.csv.gz",
+      "data/simulation/raw/20260928T061158_983288Z_emergency_stop_697447/raw.csv.gz",
+      "data/simulation/raw/20260928T061219_338811Z_emergency_stop_95935d/raw.csv.gz"
+    ],
+    "columns": {
+      "frame": {
+        "unit": "count",
+        "description": "CARLA snapshot frame index.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "step": {
+        "unit": "count",
+        "description": "Zero-based control step index.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "time_s": {
+        "unit": "s",
+        "description": "Original relative elapsed time in the respective sequence; simulation and replay have different origins.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "snapshot_elapsed_seconds": {
+        "unit": "s",
+        "description": "CARLA snapshot elapsed timestamp before per-run origin subtraction.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "wall_elapsed_s": {
+        "unit": "s",
+        "description": "Wall-clock duration measured since this run started.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "evaluation_sample": {
+        "unit": "bool",
+        "description": "Archived inclusion mask for metric evaluation; do not replace it by rounded timestamps.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "path1_started": {
+        "unit": "bool",
+        "description": "Whether the spatial path resolver has entered Path 1.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "active_path": {
+        "unit": "label",
+        "description": "Spatial path in CARLA; fixed logged-time segment in vehicle replay.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "path_source": {
+        "unit": "label",
+        "description": "Path resolver source/status (spatial match or explicit warmup).",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "path_distance_m": {
+        "unit": "m",
+        "description": "Distance from ego map position to selected/nearest reference polyline.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "ego_x": {
+        "unit": "m",
+        "description": "Position in CARLA synthetic map coordinates; not real GPS.",
+        "source": "CARLA",
+        "processing": "Logged simulation position."
+      },
+      "ego_y": {
+        "unit": "m",
+        "description": "Position in CARLA synthetic map coordinates; not real GPS.",
+        "source": "CARLA",
+        "processing": "Logged simulation position."
+      },
+      "ego_z": {
+        "unit": "m",
+        "description": "Position in CARLA synthetic map coordinates; not real GPS.",
+        "source": "CARLA",
+        "processing": "Logged simulation position."
+      },
+      "lead_x": {
+        "unit": "m",
+        "description": "Position in CARLA synthetic map coordinates; not real GPS.",
+        "source": "CARLA",
+        "processing": "Logged simulation position."
+      },
+      "lead_y": {
+        "unit": "m",
+        "description": "Position in CARLA synthetic map coordinates; not real GPS.",
+        "source": "CARLA",
+        "processing": "Logged simulation position."
+      },
+      "vx_mps": {
+        "unit": "m/s",
+        "description": "CARLA ego speed magnitude.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "lead_speed_mps": {
+        "unit": "m/s",
+        "description": "CARLA lead speed magnitude.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "lead_target_mps": {
+        "unit": "m/s",
+        "description": "Current target assigned to the CARLA lead vehicle controller.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "event_phase": {
+        "unit": "label",
+        "description": "Lead-vehicle event phase returned by the archived lead profile.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "d_center_m": {
+        "unit": "m",
+        "description": "Centerline-projected center-to-center vehicle distance with Euclidean fallback.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "d_bumper_m": {
+        "unit": "m",
+        "description": "Controller distance after subtracting both vehicle half lengths.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "center_to_bumper_offset_m": {
+        "unit": "m",
+        "description": "Sum of ego and lead half lengths removed from center distance.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "dref_m": {
+        "unit": "m",
+        "description": "CTG reference spacing Tg*vx+d0.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "ey_m": {
+        "unit": "m",
+        "description": "Signed lane-center lateral tracking error supplied to the controller.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "eydot_mps": {
+        "unit": "m/s",
+        "description": "Finite-difference lateral-error rate.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "epsi_rad": {
+        "unit": "rad",
+        "description": "Signed heading error supplied to the controller; historical proxy in vehicle input.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "epsidot_radps": {
+        "unit": "rad/s",
+        "description": "Finite-difference heading-error rate.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "kappa_raw": {
+        "unit": "1/m",
+        "description": "Geometric curvature computed from three map centerline waypoints.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "ax_command_mps2": {
+        "unit": "m/s^2",
+        "description": "Acceleration after longitudinal blending, before pedal conversion.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "ax_measured_body_mps2": {
+        "unit": "m/s^2",
+        "description": "CARLA measured acceleration projected onto ego forward direction.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "throttle": {
+        "unit": "1",
+        "description": "Clipped nonnegative longitudinal command divided by pedal scale.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "brake": {
+        "unit": "1",
+        "description": "Clipped negative longitudinal command magnitude divided by pedal scale.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "ttc_valid": {
+        "unit": "bool",
+        "description": "True only for closing speed vx-vlead > 0.001 m/s.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "ttc_s": {
+        "unit": "s",
+        "description": "Bumper gap / closing speed if valid; otherwise missing.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "ax_ctg": {
+        "unit": "m/s^2",
+        "description": "CTG branch output; in replay an archived historical input signal.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "ax_mpc": {
+        "unit": "m/s^2",
+        "description": "MPC branch output; historical replay upstream solver provenance is incomplete.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "dref": {
+        "unit": "m",
+        "description": "C++ output alias of CTG reference spacing.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "delta_lqr": {
+        "unit": "rad",
+        "description": "Clipped C++ LQR component steering command.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "delta_lqr_unlimited": {
+        "unit": "rad",
+        "description": "Unbounded -K*x LQR feedback before branch limiting.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "vdot_nom": {
+        "unit": "model-dependent",
+        "description": "C++ nominal quadratic-form derivative diagnostic; not a certified stability measure.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "actor_output": {
+        "unit": "1",
+        "description": "Raw actor tanh output in [-1,1].",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "residual_raw_rad": {
+        "unit": "rad",
+        "description": "Actor output multiplied by deployment action bound.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "residual_filtered_rad": {
+        "unit": "rad",
+        "description": "Residual after saturation, slew, LPF and final saturation; before alpha scaling.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "residual_effective_unguarded_rad": {
+        "unit": "rad",
+        "description": "alpha_lat times filtered residual before the authority guard.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "residual_effective_guarded_rad": {
+        "unit": "rad",
+        "description": "Effective residual after alpha scaling and authority guard.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "residual_guard_active": {
+        "unit": "bool",
+        "description": "Guard changed the alpha-scaled residual.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "residual_guard_reason": {
+        "unit": "label",
+        "description": "Reason recorded by the residual authority guard.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "delta_combined_rad": {
+        "unit": "rad",
+        "description": "LQR plus effective guarded residual before final steering processing.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "delta_pre_clip_rad": {
+        "unit": "rad",
+        "description": "Steering after deadband/soft scaling, before physical steering clipping.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "delta_command_rad": {
+        "unit": "rad",
+        "description": "Postprocessed physical command before CARLA normalized rate limit and LPF.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "steer_applied": {
+        "unit": "1",
+        "description": "Normalized CARLA steering after rate limit, LPF and unit clipping.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "delta_applied_equivalent_rad": {
+        "unit": "rad",
+        "description": "steer_applied times delta_max; an applied-equivalent command, not measured wheel angle.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "steering_deadband_active": {
+        "unit": "bool",
+        "description": "Final steering deadband condition is active.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "steering_soft_scale": {
+        "unit": "1",
+        "description": "Small-error steering attenuation multiplier.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "steering_clip_active": {
+        "unit": "bool",
+        "description": "Final physical command clip changed steering.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "alpha_source": {
+        "unit": "label",
+        "description": "Identifier of the risk/alpha implementation in the archived experiment.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "weight_path": {
+        "unit": "label",
+        "description": "Path whose fixed VLM weights are used, including explicit warmup mapping.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "kappa_used": {
+        "unit": "1/m",
+        "description": "Geometric path gain times raw curvature clipped to [-0.3,0.3].",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "kappa_gain": {
+        "unit": "1",
+        "description": "Geometric path gain (40/20/1), separate from the VLM-derived lateral gain.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "active_weight_sum_before": {
+        "unit": "1",
+        "description": "Raw w_d+w_v+w_kappa, excluding inactive weights.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "R_d_original": {
+        "unit": "1",
+        "description": "15/max(d_bumper,0.1); _original and _raw are raw-component aliases within V3, not obsolete-run data.",
+        "source": "archived V3 logs/results",
+        "processing": "Risk computation."
+      },
+      "R_d_raw": {
+        "unit": "1",
+        "description": "15/max(d_bumper,0.1); _original and _raw are raw-component aliases within V3, not obsolete-run data.",
+        "source": "archived V3 logs/results",
+        "processing": "Risk computation."
+      },
+      "R_d_norm": {
+        "unit": "1",
+        "description": "clip(15/max(d_bumper,0.1),0,1); _original and _raw are raw-component aliases within V3, not obsolete-run data.",
+        "source": "archived V3 logs/results",
+        "processing": "Risk computation."
+      },
+      "R_d": {
+        "unit": "1",
+        "description": "clip(15/max(d_bumper,0.1),0,1); _original and _raw are raw-component aliases within V3, not obsolete-run data.",
+        "source": "archived V3 logs/results",
+        "processing": "Risk computation."
+      },
+      "w_d_original": {
+        "unit": "1",
+        "description": "Archived raw VLM weight.",
+        "source": "archived V3 logs/results",
+        "processing": "Raw weights fixed per path."
+      },
+      "w_d": {
+        "unit": "1",
+        "description": "Shared active-three-renormalized weight; not the Separate lateral gain.",
+        "source": "archived V3 logs/results",
+        "processing": "Raw weights fixed per path."
+      },
+      "weighted_R_d": {
+        "unit": "1",
+        "description": "Effective shared active weight times corresponding normalized risk component.",
+        "source": "archived V3 logs/results",
+        "processing": "Shared-risk contribution."
+      },
+      "R_v_original": {
+        "unit": "1",
+        "description": "abs(vlead-vx)/max(abs(vx),1); _original and _raw are raw-component aliases within V3, not obsolete-run data.",
+        "source": "archived V3 logs/results",
+        "processing": "Risk computation."
+      },
+      "R_v_raw": {
+        "unit": "1",
+        "description": "abs(vlead-vx)/max(abs(vx),1); _original and _raw are raw-component aliases within V3, not obsolete-run data.",
+        "source": "archived V3 logs/results",
+        "processing": "Risk computation."
+      },
+      "R_v_norm": {
+        "unit": "1",
+        "description": "clip(abs(vlead-vx)/max(abs(vx),1),0,1); _original and _raw are raw-component aliases within V3, not obsolete-run data.",
+        "source": "archived V3 logs/results",
+        "processing": "Risk computation."
+      },
+      "R_v": {
+        "unit": "1",
+        "description": "clip(abs(vlead-vx)/max(abs(vx),1),0,1); _original and _raw are raw-component aliases within V3, not obsolete-run data.",
+        "source": "archived V3 logs/results",
+        "processing": "Risk computation."
+      },
+      "w_v_original": {
+        "unit": "1",
+        "description": "Archived raw VLM weight.",
+        "source": "archived V3 logs/results",
+        "processing": "Raw weights fixed per path."
+      },
+      "w_v": {
+        "unit": "1",
+        "description": "Shared active-three-renormalized weight; not the Separate lateral gain.",
+        "source": "archived V3 logs/results",
+        "processing": "Raw weights fixed per path."
+      },
+      "weighted_R_v": {
+        "unit": "1",
+        "description": "Effective shared active weight times corresponding normalized risk component.",
+        "source": "archived V3 logs/results",
+        "processing": "Shared-risk contribution."
+      },
+      "R_kappa_original": {
+        "unit": "1",
+        "description": "abs(clip(path_gain*kappa_raw,-0.3,0.3))/0.05; _original and _raw are raw-component aliases within V3, not obsolete-run data.",
+        "source": "archived V3 logs/results",
+        "processing": "Risk computation."
+      },
+      "R_kappa_raw": {
+        "unit": "1",
+        "description": "abs(clip(path_gain*kappa_raw,-0.3,0.3))/0.05; _original and _raw are raw-component aliases within V3, not obsolete-run data.",
+        "source": "archived V3 logs/results",
+        "processing": "Risk computation."
+      },
+      "R_kappa_norm": {
+        "unit": "1",
+        "description": "clip(abs(clip(path_gain*kappa_raw,-0.3,0.3))/0.05,0,1); _original and _raw are raw-component aliases within V3, not obsolete-run data.",
+        "source": "archived V3 logs/results",
+        "processing": "Risk computation."
+      },
+      "R_kappa": {
+        "unit": "1",
+        "description": "clip(abs(clip(path_gain*kappa_raw,-0.3,0.3))/0.05,0,1); _original and _raw are raw-component aliases within V3, not obsolete-run data.",
+        "source": "archived V3 logs/results",
+        "processing": "Risk computation."
+      },
+      "w_kappa_original": {
+        "unit": "1",
+        "description": "Archived raw VLM weight.",
+        "source": "archived V3 logs/results",
+        "processing": "Raw weights fixed per path."
+      },
+      "w_kappa": {
+        "unit": "1",
+        "description": "Shared active-three-renormalized weight; not the Separate lateral gain.",
+        "source": "archived V3 logs/results",
+        "processing": "Raw weights fixed per path."
+      },
+      "weighted_R_kappa": {
+        "unit": "1",
+        "description": "Effective shared active weight times corresponding normalized risk component.",
+        "source": "archived V3 logs/results",
+        "processing": "Shared-risk contribution."
+      },
+      "w_s_original": {
+        "unit": "1",
+        "description": "Archived raw VLM weight.",
+        "source": "archived V3 logs/results",
+        "processing": "Raw weights fixed per path."
+      },
+      "w_p_original": {
+        "unit": "1",
+        "description": "Archived raw VLM weight.",
+        "source": "archived V3 logs/results",
+        "processing": "Raw weights fixed per path."
+      },
+      "active_weight_sum_after": {
+        "unit": "1",
+        "description": "Sum of shared effective active weights (one).",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "separate_longitudinal_weight_sum": {
+        "unit": "1",
+        "description": "Raw w_d+w_v used for longitudinal renormalization.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "separate_w_d": {
+        "unit": "1",
+        "description": "w_d/(w_d+w_v).",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "separate_w_v": {
+        "unit": "1",
+        "description": "w_v/(w_d+w_v).",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "separate_w_kappa": {
+        "unit": "1",
+        "description": "Alias of the V3 path-max-normalized lateral gain g_kappa.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "R_ctrl": {
+        "unit": "1",
+        "description": "Shared risk sum of three normalized components weighted over active {d,v,kappa}.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "R_lon": {
+        "unit": "1",
+        "description": "(w_d*R_d_norm+w_v*R_v_norm)/(w_d+w_v).",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "R_lat": {
+        "unit": "1",
+        "description": "clip(g_kappa*R_kappa_norm,0,1); V3 proposed lateral risk.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "R_lat_pre_clip": {
+        "unit": "1",
+        "description": "g_kappa*R_kappa_norm before [0,1] clipping.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "g_kappa": {
+        "unit": "1",
+        "description": "Current archived path curvature weight / maximum of all three path curvature weights.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "w_kappa_path": {
+        "unit": "1",
+        "description": "Current raw path curvature weight before max normalization.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "w_kappa_path_max": {
+        "unit": "1",
+        "description": "Maximum raw curvature weight across the three archived paths (0.12).",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "separate_lateral_vlm_gain_policy": {
+        "unit": "label",
+        "description": "normalized_path_max for every released V3 run.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "alpha": {
+        "unit": "1",
+        "description": "Alias of same-state alpha_shared diagnostic, not always the applied authority.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "alpha_shared": {
+        "unit": "1",
+        "description": "Sigmoid of the active-three-renormalized shared risk; diagnostic in Separate/endpoint runs.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "alpha_lon": {
+        "unit": "1",
+        "description": "Actual longitudinal authority; forced 0/1 in endpoints and equal to shared coefficient in Shared runs.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "alpha_lat": {
+        "unit": "1",
+        "description": "Actual lateral authority; forced 0/1 in endpoints and equal to shared coefficient in Shared runs.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "alpha_architecture": {
+        "unit": "label",
+        "description": "Applied authority architecture; separate/shared sigmoid or endpoint.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      }
+    }
+  },
+  {
+    "files": [
+      "data/tables/table_empirical_residual_boundedness.csv"
+    ],
+    "columns": {
+      "Scenario": {
+        "unit": "text/hash",
+        "description": "Scenario identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "Samples": {
+        "unit": "count",
+        "description": "Sample count or number of nonmissing controlled conditions, as named.",
+        "source": "archived V3 logs/results",
+        "processing": "Count; no imputation."
+      },
+      "p95 |alpha_lat residual| [rad]": {
+        "unit": "rad",
+        "description": "p95 |alpha_lat residual| [rad]; alpha_lat residual is before guard, effective residual is after guard, filtered residual is before alpha.",
+        "source": "archived V3 logs/results",
+        "processing": "Absolute-magnitude statistic over Separate evaluation samples."
+      },
+      "max |alpha_lat residual| [rad]": {
+        "unit": "rad",
+        "description": "max |alpha_lat residual| [rad]; alpha_lat residual is before guard, effective residual is after guard, filtered residual is before alpha.",
+        "source": "archived V3 logs/results",
+        "processing": "Absolute-magnitude statistic over Separate evaluation samples."
+      },
+      "p95 |effective residual| [rad]": {
+        "unit": "rad",
+        "description": "p95 |effective residual| [rad]; alpha_lat residual is before guard, effective residual is after guard, filtered residual is before alpha.",
+        "source": "archived V3 logs/results",
+        "processing": "Absolute-magnitude statistic over Separate evaluation samples."
+      },
+      "max |effective residual| [rad]": {
+        "unit": "rad",
+        "description": "max |effective residual| [rad]; alpha_lat residual is before guard, effective residual is after guard, filtered residual is before alpha.",
+        "source": "archived V3 logs/results",
+        "processing": "Absolute-magnitude statistic over Separate evaluation samples."
+      },
+      "p95 |filtered residual| [rad]": {
+        "unit": "rad",
+        "description": "p95 |filtered residual| [rad]; alpha_lat residual is before guard, effective residual is after guard, filtered residual is before alpha.",
+        "source": "archived V3 logs/results",
+        "processing": "Absolute-magnitude statistic over Separate evaluation samples."
+      },
+      "guard-active ratio": {
+        "unit": "1",
+        "description": "Fraction of Separate evaluation samples changed by the residual guard.",
+        "source": "archived V3 logs/results",
+        "processing": "Boolean mean."
+      }
+    }
+  },
+  {
+    "files": [
+      "data/tables/table_nominal_lateral.csv"
+    ],
+    "columns": {
+      "architecture_label": {
+        "unit": "text/hash",
+        "description": "architecture label identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "MAE_ey_m": {
+        "unit": "m",
+        "description": "MAE ey m; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "RMS_ey_m": {
+        "unit": "m",
+        "description": "RMS ey m; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "MAE_epsi_rad": {
+        "unit": "rad",
+        "description": "MAE epsi rad; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "RMS_epsi_rad": {
+        "unit": "rad",
+        "description": "RMS epsi rad; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "steering_applied_equivalent_RMS_rad": {
+        "unit": "rad",
+        "description": "steering applied equivalent RMS rad; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "steering_rate_RMS_radps": {
+        "unit": "rad/s",
+        "description": "steering rate RMS radps; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "alpha_lat_mean": {
+        "unit": "1",
+        "description": "Evaluation-sample mean of indicated authority; path suffix restricts samples to that path.",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run evaluation; empty path subsets are missing."
+      }
+    }
+  },
+  {
+    "files": [
+      "data/tables/table_nominal_longitudinal.csv"
+    ],
+    "columns": {
+      "architecture_label": {
+        "unit": "text/hash",
+        "description": "architecture label identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "MAE_d_m": {
+        "unit": "m",
+        "description": "MAE d m; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "RMS_d_m": {
+        "unit": "m",
+        "description": "RMS d m; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "MAE_relative_speed_mps": {
+        "unit": "m/s",
+        "description": "MAE relative speed mps; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "jerk_RMS_mps3": {
+        "unit": "m/s^3",
+        "description": "jerk RMS mps3; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "min_TTC_s": {
+        "unit": "s",
+        "description": "min TTC s; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "acceleration_RMS_mps2": {
+        "unit": "m/s^2",
+        "description": "acceleration RMS mps2; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "alpha_lon_mean": {
+        "unit": "1",
+        "description": "Evaluation-sample mean of indicated authority; path suffix restricts samples to that path.",
+        "source": "archived V3 logs/results",
+        "processing": "Per-run evaluation; empty path subsets are missing."
+      }
+    }
+  },
+  {
+    "files": [
+      "data/tables/table_recorded_state_replay.csv"
+    ],
+    "columns": {
+      "CTG output RMS [m/s^2]": {
+        "unit": "m/s^2",
+        "description": "CTG output RMS [m/s^2]",
+        "source": "archived V3 logs/results",
+        "processing": "Replay sample RMS; steering is command rather than applied-equivalent."
+      },
+      "MPC output RMS [m/s^2]": {
+        "unit": "m/s^2",
+        "description": "MPC output RMS [m/s^2]",
+        "source": "archived V3 logs/results",
+        "processing": "Replay sample RMS; steering is command rather than applied-equivalent."
+      },
+      "Separate blend RMS [m/s^2]": {
+        "unit": "m/s^2",
+        "description": "Separate blend RMS [m/s^2]",
+        "source": "archived V3 logs/results",
+        "processing": "Replay sample RMS; steering is command rather than applied-equivalent."
+      },
+      "mean alpha_lon": {
+        "unit": "1",
+        "description": "Replay mean of indicated authority.",
+        "source": "archived V3 logs/results",
+        "processing": "Full retained replay window."
+      },
+      "LQR command RMS [rad]": {
+        "unit": "rad",
+        "description": "LQR command RMS [rad]",
+        "source": "archived V3 logs/results",
+        "processing": "Replay sample RMS; steering is command rather than applied-equivalent."
+      },
+      "Proposed command RMS [rad]": {
+        "unit": "rad",
+        "description": "Proposed command RMS [rad]",
+        "source": "archived V3 logs/results",
+        "processing": "Replay sample RMS; steering is command rather than applied-equivalent."
+      },
+      "mean alpha_lat": {
+        "unit": "1",
+        "description": "Replay mean of indicated authority.",
+        "source": "archived V3 logs/results",
+        "processing": "Full retained replay window."
+      },
+      "LQR standardized trend MAE": {
+        "unit": "1",
+        "description": "LQR standardized trend MAE against standardized logged steering reference.",
+        "source": "archived V3 logs/results",
+        "processing": "Z-score each sequence using population std; compare retained V3 replay rows."
+      },
+      "Proposed standardized trend MAE": {
+        "unit": "1",
+        "description": "Proposed standardized trend MAE against standardized logged steering reference.",
+        "source": "archived V3 logs/results",
+        "processing": "Z-score each sequence using population std; compare retained V3 replay rows."
+      },
+      "Proposed trend Pearson r": {
+        "unit": "1",
+        "description": "Proposed trend Pearson r against standardized logged steering reference.",
+        "source": "archived V3 logs/results",
+        "processing": "Z-score each sequence using population std; compare retained V3 replay rows."
+      }
+    }
+  },
+  {
+    "files": [
+      "data/tables/table_shared_vs_separate.csv"
+    ],
+    "columns": {
+      "scenario_label": {
+        "unit": "text/hash",
+        "description": "scenario label identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "architecture_label": {
+        "unit": "text/hash",
+        "description": "architecture label identifies the run, row variable, status or original configuration digest.",
+        "source": "archived V3 logs/results",
+        "processing": "Copied metadata; run_dir rebased in public package."
+      },
+      "MAE_d_m": {
+        "unit": "m",
+        "description": "MAE d m; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "jerk_RMS_mps3": {
+        "unit": "m/s^3",
+        "description": "jerk RMS mps3; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "min_TTC_s": {
+        "unit": "s",
+        "description": "min TTC s; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "MAE_ey_m": {
+        "unit": "m",
+        "description": "MAE ey m; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "MAE_epsi_rad": {
+        "unit": "rad",
+        "description": "MAE epsi rad; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      },
+      "steering_applied_equivalent_RMS_rad": {
+        "unit": "rad",
+        "description": "steering applied equivalent RMS rad; exact formula in methodology summary and runtime/metrics.py.",
+        "source": "archived V3 logs/results",
+        "processing": "Computed over archived evaluation_sample mask; differences use N-1 intervals."
+      }
+    }
+  },
+  {
+    "files": [
+      "data/vehicle/processed/recorded_state_replay_vlm_lateral_gain.csv"
+    ],
+    "columns": {
+      "time_s": {
+        "unit": "s",
+        "description": "Original relative elapsed time in the respective sequence; simulation and replay have different origins.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "relative_time_s": {
+        "unit": "s",
+        "description": "Time relative to the first retained replay/evaluation sample.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "active_path": {
+        "unit": "label",
+        "description": "Spatial path in CARLA; fixed logged-time segment in vehicle replay.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "ax_ctg_mps2": {
+        "unit": "m/s^2",
+        "description": "Archived CTG replay input passed through unchanged.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "ax_mpc_mps2": {
+        "unit": "m/s^2",
+        "description": "Archived MPC-labelled replay input passed through unchanged.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "ax_separate_alpha_mps2": {
+        "unit": "m/s^2",
+        "description": "(1-alpha_lon)*ax_ctg + alpha_lon*ax_mpc in V3 replay.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "delta_lqr_postprocessed_rad": {
+        "unit": "rad",
+        "description": "Replay LQR command after V3 steering postprocessing, before normalized actuator LPF.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "delta_separate_alpha_postprocessed_rad": {
+        "unit": "rad",
+        "description": "Replay LQR plus V3 guarded residual command after steering postprocessing.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "residual_effective_guarded_rad": {
+        "unit": "rad",
+        "description": "Effective residual after alpha scaling and authority guard.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "residual_guard_active": {
+        "unit": "bool",
+        "description": "Guard changed the alpha-scaled residual.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "logged_steering_trend_zscore": {
+        "unit": "1",
+        "description": "(aligned logged steering - mean)/population std over the replay sequence.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "R_d_norm": {
+        "unit": "1",
+        "description": "clip(15/max(d_bumper,0.1),0,1); _original and _raw are raw-component aliases within V3, not obsolete-run data.",
+        "source": "archived V3 logs/results",
+        "processing": "Risk computation."
+      },
+      "R_v_norm": {
+        "unit": "1",
+        "description": "clip(abs(vlead-vx)/max(abs(vx),1),0,1); _original and _raw are raw-component aliases within V3, not obsolete-run data.",
+        "source": "archived V3 logs/results",
+        "processing": "Risk computation."
+      },
+      "R_kappa_norm": {
+        "unit": "1",
+        "description": "clip(abs(clip(path_gain*kappa_raw,-0.3,0.3))/0.05,0,1); _original and _raw are raw-component aliases within V3, not obsolete-run data.",
+        "source": "archived V3 logs/results",
+        "processing": "Risk computation."
+      },
+      "R_shared": {
+        "unit": "1",
+        "description": "Replay alias of the shared risk calculation.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "R_lon": {
+        "unit": "1",
+        "description": "(w_d*R_d_norm+w_v*R_v_norm)/(w_d+w_v).",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "R_lat_pre_clip": {
+        "unit": "1",
+        "description": "g_kappa*R_kappa_norm before [0,1] clipping.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "R_lat": {
+        "unit": "1",
+        "description": "clip(g_kappa*R_kappa_norm,0,1); V3 proposed lateral risk.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "g_kappa": {
+        "unit": "1",
+        "description": "Current archived path curvature weight / maximum of all three path curvature weights.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "w_kappa_path": {
+        "unit": "1",
+        "description": "Current raw path curvature weight before max normalization.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "w_kappa_path_max": {
+        "unit": "1",
+        "description": "Maximum raw curvature weight across the three archived paths (0.12).",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "alpha_shared": {
+        "unit": "1",
+        "description": "Sigmoid of the active-three-renormalized shared risk; diagnostic in Separate/endpoint runs.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "alpha_lon": {
+        "unit": "1",
+        "description": "Actual longitudinal authority; forced 0/1 in endpoints and equal to shared coefficient in Shared runs.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "alpha_lat": {
+        "unit": "1",
+        "description": "Actual lateral authority; forced 0/1 in endpoints and equal to shared coefficient in Shared runs.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      }
+    }
+  },
+  {
+    "files": [
+      "data/vehicle/processed/replay_source_signals.csv.gz"
+    ],
+    "columns": {
+      "time_s": {
+        "unit": "s",
+        "description": "Original relative elapsed time in the respective sequence; simulation and replay have different origins.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "ego_speed_rear_mps": {
+        "unit": "m/s",
+        "description": "Historical ego-speed proxy from rear-wheel speeds; preserved input.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "lead_distance_m": {
+        "unit": "m",
+        "description": "Historical processed lead-gap input; retained without additional interpolation.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "lead_speed_proxy_mps": {
+        "unit": "m/s",
+        "description": "Historical derived lead-speed proxy; not direct lead-speed ground truth.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "ey_centered_m": {
+        "unit": "m",
+        "description": "Historically centered lateral-error input; centering provenance is incomplete.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "epsi_rad": {
+        "unit": "rad",
+        "description": "Signed heading error supplied to the controller; historical proxy in vehicle input.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "kappa_signed": {
+        "unit": "1/m (upstream)",
+        "description": "Historical signed lane-geometry curvature proxy.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "ax_ctg": {
+        "unit": "m/s^2",
+        "description": "CTG branch output; in replay an archived historical input signal.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "ax_mpc": {
+        "unit": "m/s^2",
+        "description": "MPC branch output; historical replay upstream solver provenance is incomplete.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "dref_ctg_m": {
+        "unit": "m",
+        "description": "Historical controller reference spacing saved with replay inputs.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "delta_lqr_rad": {
+        "unit": "rad",
+        "description": "Historical LQR component input reused by V3 replay.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "delta_residual_rad": {
+        "unit": "rad",
+        "description": "Historical residual input treated as filtered by the V3 replay generator.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "ax_measured_g": {
+        "unit": "g (upstream label)",
+        "description": "Historical logged longitudinal acceleration; raw calibration not independently confirmed.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "ax_measured_mps2": {
+        "unit": "m/s^2 (upstream)",
+        "description": "Historical acceleration conversion retained without recalibration.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "steer_measured_raw_rad": {
+        "unit": "rad (upstream)",
+        "description": "Historical conversion of logged steering; calibration provenance incomplete.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "steer_measured_aligned_rad": {
+        "unit": "rad (aligned proxy)",
+        "description": "Previously sign/alignment-adjusted logged steering used only for standardized trend comparison.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "steer_align_k": {
+        "unit": "upstream scaling",
+        "description": "Saved multiplicative steering-alignment coefficient; not a certified steering ratio.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "steer_align_b": {
+        "unit": "upstream offset",
+        "description": "Saved steering-alignment offset.",
+        "source": "archived V3 logs/results",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      }
+    }
+  },
+  {
+    "files": [
+      "data/vehicle/raw/recorded_sequence.csv.gz"
+    ],
+    "columns": {
+      "time_s": {
+        "unit": "s",
+        "description": "Original relative elapsed time in the respective sequence; simulation and replay have different origins.",
+        "source": "raw_vehicle",
+        "processing": "Preserved archived value; definition above describes historical computation."
+      },
+      "C0": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal C0; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "C1": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal C1; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "C2": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal C2; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "C3": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal C3; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "CIPV_RELATIVE_DISTANCE Value": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal CIPV_RELATIVE_DISTANCE Value; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "CIPV_RELATIVE_SPD Value": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal CIPV_RELATIVE_SPD Value; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "LatAccel Value": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal LatAccel Value; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "LongAccel Value": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal LongAccel Value; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "L_C0 Value": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal L_C0 Value; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "L_C1 Value": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal L_C1 Value; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "L_C2 Value": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal L_C2 Value; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "L_C3 Value": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal L_C3 Value; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "R_C0 Value": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal R_C0 Value; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "R_C1 Value": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal R_C1 Value; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "R_C2 Value": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal R_C2 Value; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "R_C3 Value": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal R_C3 Value; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "Speed Value": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal Speed Value; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "Angle Value": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal Angle Value; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "WHL_SPD_FL Value": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal WHL_SPD_FL Value; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "WHL_SPD_FR Value": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal WHL_SPD_FR Value; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "WHL_SPD_RL Value": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal WHL_SPD_RL Value; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "WHL_SPD_RR Value": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal WHL_SPD_RR Value; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      },
+      "YawRt Value": {
+        "unit": "not archived",
+        "description": "Raw logger numeric signal YawRt Value; calibration/physical unit not archived.",
+        "source": "vehicle logger",
+        "processing": "Metadata removal only; numeric token preserved."
+      }
+    }
+  }
+]

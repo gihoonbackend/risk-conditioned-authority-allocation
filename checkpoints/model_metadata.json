@@ -1,0 +1,53 @@
+{
+  "file": "residual_policy_rl_20260211_20260315_053633.pt",
+  "sha256": "91f9634d7e5f5ed27c27ce82944ae339737ba1a7f906d13c2aa16e80aec5de16",
+  "size_bytes": 823480,
+  "included": false,
+  "reason": "No explicit institutional/model redistribution authorization found in audited artifacts.",
+  "architecture": {
+    "state_dim": 6,
+    "action_dim": 1,
+    "hidden_layers": [
+      256,
+      256
+    ],
+    "activation": "ReLU",
+    "actor_output": "Tanh"
+  },
+  "deployment": {
+    "device": "cpu",
+    "state_dim": 6,
+    "action_dim": 1,
+    "hidden_dim": 256,
+    "state": [
+      "ey",
+      "eydot",
+      "epsi",
+      "epsidot",
+      "vx",
+      "kappa_raw"
+    ],
+    "normalization": "checkpoint norm_mean/norm_var; denominator sqrt(var)+1e-6",
+    "action_bound_rad": 0.18,
+    "slew_limit_rad_per_step": 0.03,
+    "lpf_previous_coefficient": 0.6,
+    "filter_order": [
+      "actor_tanh_times_bound",
+      "saturation",
+      "slew",
+      "LPF",
+      "saturation"
+    ],
+    "online_adaptation": false,
+    "residual_authority_guard": {
+      "enabled": true,
+      "law": "When alpha_lat*residual opposes delta_LQR, retain at least minimum_lqr_retained_fraction of |delta_LQR|. When |delta_LQR| is below lqr_floor_rad, cap the effective residual.",
+      "minimum_lqr_retained_fraction": 0.5,
+      "lqr_floor_rad": 0.02,
+      "low_lqr_effective_bound_rad": 0.02,
+      "placement": "after residual amplitude/slew/LPF filter and alpha scaling; before final steering postprocess"
+    }
+  },
+  "training_cli": "not available",
+  "training_defaults_are_not_confirmed_run_settings": true
+}

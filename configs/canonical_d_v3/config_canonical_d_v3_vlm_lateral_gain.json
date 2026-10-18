@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "config_version": "revision-canonical-d-v3-vlm-lateral-gain",
+  "selection_status": "Canonical-D v3. The shared-alpha baseline remains the v2 active-three-weight-renormalized implementation. The proposed separate-alpha lateral branch applies an archived-VLM path-wise curvature gain after the unchanged geometric curvature normalization.",
+  "extends": "resolved_config.json",
+  "overrides": {
+    "experiment": {
+      "scenario": "nominal_following",
+      "controller_mode": "separate_alpha",
+      "smoke_scenarios": [
+        "nominal_following",
+        "emergency_stop",
+        "curvature_emergency",
+        "high_curvature_low_longitudinal_risk"
+      ],
+      "output_root": "generated/runs",
+      "risk_scale_policy": "The v3 VLM curvature gain changes only the proposed separate-alpha lateral-risk construction. CTG, MPC, LQR, RL checkpoint/filter/guard, R_th, k, path reference, and archived VLM artifact remain fixed."
+    },
+    "risk": {
+      "canonical_risk_id": "canonical_D_normalized_active_weight_renormalized_v3_vlm_lateral_gain",
+      "formulation": "NORMALIZED",
+      "active_weight_policy": "RENORMALIZED",
+      "alpha_component_mode": "all",
+      "separate_risk_definition": "channel_normalized",
+      "separate_lateral_vlm_gain_policy": "normalized_path_max",
+      "separate_lateral_vlm_gain_reference": "max_q(w_kappa^(q)) over archived path1/path2/path3 VLM weights",
+      "d_safe_m": 15.0,
+      "renormalization_scope": "Shared baseline: active {d,v,kappa} weights are renormalized. Proposed longitudinal branch: raw archived w_d,w_v are renormalized over {d,v}. Proposed lateral branch: archived w_kappa is normalized by the maximum archived path-wise w_kappa after the unchanged geometric curvature normalization.",
+      "distance_scale_rationale": "d_safe_m=15 m yields R_d=0.5 at a 30 m bumper gap, close to the CTG reference gap at the 15 m/s baseline speed.",
+      "equations": {
+        "kappa_used": "clip(path_gain^(p)*kappa_raw, -kappa_clip, kappa_clip)",
+        "R_d_raw": "d_safe_m/max(d_bumper_m, distance_floor_m)",
+        "R_v_raw": "abs(v_lead_mps-vx_mps)/max(abs(vx_mps), speed_floor_mps)",
+        "R_kappa_raw": "abs(kappa_used)/kappa_scale",
+        "R_i_norm": "clip(R_i_raw, 0, 1), i in {d, v, kappa}",
+        "R_shared": "sum_i((w_i/(w_d+w_v+w_kappa))*R_i_norm), i in {d, v, kappa}",
+        "R_lon": "(w_d*R_d_norm+w_v*R_v_norm)/(w_d+w_v)",
+        "g_kappa": "w_kappa^(p)/max_q(w_kappa^(q))",
+        "R_lat": "clip(g_kappa^(p)*R_kappa_norm, 0, 1)",
+        "alpha_c": "1/(1+exp(-k*(R_c-R_th))), c in {lon,lat}"
+      },
+      "R_th": 0.5,
+      "k": 5.0
+    }
+  }
+}

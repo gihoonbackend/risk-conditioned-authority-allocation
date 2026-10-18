@@ -1,0 +1,20 @@
+{
+  "origin": "CARLA synthetic RGB; visually reviewed; no real-road images included",
+  "paths": [
+    {
+      "path_name": "path1",
+      "image_path": "vlm/path_snapshots/path1_tight_curve.png",
+      "meta_path": "vlm/path_snapshots/path1_tight_curve.json"
+    },
+    {
+      "path_name": "path2",
+      "image_path": "vlm/path_snapshots/path2_mild_curve.png",
+      "meta_path": "vlm/path_snapshots/path2_mild_curve.json"
+    },
+    {
+      "path_name": "path3",
+      "image_path": "vlm/path_snapshots/path3_straight.png",
+      "meta_path": "vlm/path_snapshots/path3_straight.json"
+    }
+  ]
+}

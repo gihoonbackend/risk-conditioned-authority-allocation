@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "Please cite this reproducibility package and the associated manuscript."
+title: "Risk-Conditioned Channel-Specific Orchestration with Offline Vision-Language Context Parameterization for Hybrid Autonomous Driving Control"
+type: software
+version: 1.0.0
+authors:
+  - family-names: Song
+    given-names: Gihoon
+  - family-names: Park
+    given-names: Hyeongjun
+  - family-names: Kim
+    given-names: Guntae
+  - family-names: Kim
+    given-names: Minchang
+  - family-names: Kang
+    given-names: Changmook
+preferred-citation:
+  type: article
+  title: "Risk-Conditioned Channel-Specific Orchestration with Offline Vision-Language Context Parameterization for Hybrid Autonomous Driving Control"
+  authors:
+    - family-names: Song
+      given-names: Gihoon
+    - family-names: Park
+      given-names: Hyeongjun
+    - family-names: Kim
+      given-names: Guntae
+    - family-names: Kim
+      given-names: Minchang
+    - family-names: Kang
+      given-names: Changmook
+  journal: Engineering Applications of Artificial Intelligence
+  notes: "Manuscript prepared for submission; acceptance, publication date and DOI have not been established."

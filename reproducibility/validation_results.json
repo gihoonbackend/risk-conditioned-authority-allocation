@@ -1,0 +1,151 @@
+{
+  "status": "passed",
+  "checks": {
+    "json_yaml_parsing_and_markdown_links": {
+      "passed": true,
+      "local_links": 20
+    },
+    "all_public_csv_parse_and_dictionary_coverage": {
+      "passed": true,
+      "files": 52
+    },
+    "risk_law_matches_every_archived_control_sample": {
+      "passed": true,
+      "runs": 36
+    },
+    "vlm_weights_and_path_gains": {
+      "passed": true,
+      "gains": {
+        "path1": 1.0,
+        "path2": 0.5833333333333334,
+        "path3": 0.4166666666666667
+      }
+    },
+    "cpp_components_on_archived_states": {
+      "passed": true,
+      "samples": 2000,
+      "max_absolute_differences": {
+        "ax_ctg": 1.0080825063596421e-13,
+        "ax_mpc": 9.094947017729282e-11,
+        "dref": 1.4210854715202004e-14,
+        "delta_lqr": 3.7643499428696714e-16,
+        "delta_lqr_unlimited": 3.7643499428696714e-16
+      },
+      "scope": "existing-state component replay only; no new vehicle trajectory or RL inference"
+    },
+    "artifact_copy_hashes": {
+      "passed": true,
+      "artifacts": 168
+    },
+    "raw_vehicle_numeric_tokens_unchanged": {
+      "passed": true,
+      "rows": 236504
+    },
+    "tables_match_final_v3": {
+      "status": "passed",
+      "main_runs": 16,
+      "variation_runs": 20,
+      "matching_tables": [
+        "table_nominal_longitudinal",
+        "table_nominal_lateral",
+        "table_shared_vs_separate",
+        "table_controlled_variation",
+        "table_empirical_residual_boundedness",
+        "table_recorded_state_replay"
+      ],
+      "tolerance": {
+        "rtol": 1e-10,
+        "atol": 1e-10
+      },
+      "source": "archived complete trajectories and archived replay input signals"
+    },
+    "figure_reproduction": {
+      "fig06_nominal_longitudinal_vlm_lateral_gain": {
+        "generated": true,
+        "pixel_identical_in_current_environment": true,
+        "vector_pdf_exists": true
+      },
+      "fig07_nominal_lateral_vlm_lateral_gain": {
+        "generated": true,
+        "pixel_identical_in_current_environment": true,
+        "vector_pdf_exists": true
+      },
+      "fig08_channel_specific_risk_authority": {
+        "generated": true,
+        "pixel_identical_in_current_environment": true,
+        "vector_pdf_exists": true
+      },
+      "fig09_shared_vs_separate_asymmetric_risk": {
+        "generated": true,
+        "pixel_identical_in_current_environment": true,
+        "vector_pdf_exists": true
+      },
+      "fig10_recorded_state_replay_vlm_lateral_gain": {
+        "generated": true,
+        "pixel_identical_in_current_environment": true,
+        "vector_pdf_exists": true
+      }
+    }
+  },
+  "csv_rows": {
+    "archive/development/table_old_vs_new_separate.csv": 28,
+    "data/simulation/processed/cross_channel_activation.csv": 32,
+    "data/simulation/processed/formula_smoke.csv": 3,
+    "data/simulation/processed/main_metrics.csv": 16,
+    "data/simulation/processed/technical_validation.csv": 16,
+    "data/simulation/processed/variation_individual_metrics.csv": 20,
+    "data/simulation/processed/variation_mean_std.csv": 80,
+    "data/simulation/raw/20260928T055928_055510Z_nominal_following_f5594b/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T055947_731172Z_nominal_following_490d26/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060007_606915Z_nominal_following_d27707/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060027_945211Z_nominal_following_96dfe1/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060047_813047Z_emergency_stop_2840ea/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060107_757885Z_emergency_stop_64133b/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060127_699880Z_emergency_stop_bd230e/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060147_594526Z_emergency_stop_56e95a/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060207_599517Z_curvature_emergency_822a5f/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060227_583489Z_curvature_emergency_08540a/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060247_584602Z_curvature_emergency_3cb99f/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060307_789593Z_curvature_emergency_b2f727/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060327_820293Z_high_curvature_low_longitudinal_risk_dee62b/raw.csv.gz": 84,
+    "data/simulation/raw/20260928T060345_459309Z_high_curvature_low_longitudinal_risk_b960ca/raw.csv.gz": 84,
+    "data/simulation/raw/20260928T060402_991443Z_high_curvature_low_longitudinal_risk_68ec0e/raw.csv.gz": 84,
+    "data/simulation/raw/20260928T060420_574975Z_high_curvature_low_longitudinal_risk_dc3cea/raw.csv.gz": 84,
+    "data/simulation/raw/20260928T060553_082262Z_nominal_following_0e7d56/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060615_000234Z_nominal_following_6118cc/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060634_891593Z_nominal_following_fdfea6/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060654_865704Z_nominal_following_dab818/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060715_193381Z_nominal_following_bb3c42/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060735_577598Z_nominal_following_3816e2/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060755_824531Z_nominal_following_41a99b/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060816_242764Z_nominal_following_3f5142/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060836_420074Z_nominal_following_30e94d/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060856_797178Z_nominal_following_d2e9fc/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060917_256256Z_emergency_stop_c42e81/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060937_513603Z_emergency_stop_186237/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T060957_745617Z_emergency_stop_6baad3/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T061017_868622Z_emergency_stop_b88b47/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T061038_057148Z_emergency_stop_8ca96f/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T061058_283614Z_emergency_stop_bd9578/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T061118_471036Z_emergency_stop_b2b9f3/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T061138_865496Z_emergency_stop_a82b30/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T061158_983288Z_emergency_stop_697447/raw.csv.gz": 2000,
+    "data/simulation/raw/20260928T061219_338811Z_emergency_stop_95935d/raw.csv.gz": 2000,
+    "data/tables/table_controlled_variation.csv": 28,
+    "data/tables/table_empirical_residual_boundedness.csv": 4,
+    "data/tables/table_nominal_lateral.csv": 2,
+    "data/tables/table_nominal_longitudinal.csv": 3,
+    "data/tables/table_recorded_state_replay.csv": 1,
+    "data/tables/table_shared_vs_separate.csv": 8,
+    "data/vehicle/processed/recorded_state_replay_vlm_lateral_gain.csv": 4230,
+    "data/vehicle/processed/replay_source_signals.csv.gz": 211503,
+    "data/vehicle/raw/recorded_sequence.csv.gz": 236504
+  },
+  "not_executed": [
+    "new CARLA simulations",
+    "RL training/inference with withheld weights",
+    "network package installation",
+    "LaTeX compilation"
+  ],
+  "manuscript_comparison": "Verified against final V3 source CSVs; final manuscript typeset values not supplied."
+}

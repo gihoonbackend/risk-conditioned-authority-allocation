@@ -1,0 +1,2 @@
+CTG output RMS [m/s^2],MPC output RMS [m/s^2],Separate blend RMS [m/s^2],mean alpha_lon,LQR command RMS [rad],Proposed command RMS [rad],mean alpha_lat,LQR standardized trend MAE,Proposed standardized trend MAE,Proposed trend Pearson r
+2.795773719298142,2.6495829338462142,2.6629964175341585,0.31399609179709287,0.09561826874743952,0.07607332187956715,0.26314702831354375,0.6066329720653859,0.7032907468845149,0.5354357014561603

@@ -1,0 +1,43 @@
+{
+  "status": "technical_scan_passed_release_permissions_pending",
+  "scanned_files": 216,
+  "high_confidence_findings": [],
+  "keyword_occurrences": {
+    "authorization": 4,
+    "bearer": 3,
+    "openai_api_key": 1,
+    "password": 2,
+    "secret": 4,
+    "sk-": 8,
+    "token": 61
+  },
+  "keyword_review": "Matches refer to audit rule definitions, release-rights prose and numeric-token checksum terminology. Keyword presence is not a credential finding.",
+  "scope": "All release text and decompressed CSVs; PNG metadata/EXIF; PDF metadata and extracted text. No symlinks included.",
+  "vehicle_numeric_rows": 236504,
+  "privacy_removals": [
+    "logger user value",
+    "absolute recording date/time",
+    "device/platform description",
+    "project/software internal identifiers",
+    "instrument metadata and model hierarchy paths"
+  ],
+  "raw_gps_or_vehicle_identification_channels_detected": false,
+  "real_vehicle_visual_media_included": false,
+  "synthetic_snapshot_visual_review": "Three archived CARLA frames visually inspected during packaging; no real people, real plates or real GPS metadata included.",
+  "permissions": {
+    "code": "LICENSE REVIEW REQUIRED",
+    "vehicle_data": "LICENSE REVIEW REQUIRED",
+    "checkpoint": "withheld; redistribution permission unconfirmed",
+    "synthetic_snapshots": "license/asset review required"
+  },
+  "large_files_at_least_100MB": [],
+  "github_public_push_ready": false,
+  "human_release_gates": [
+    "Confirm original code ownership and license grant.",
+    "Confirm institutional/project vehicle data ownership, consent and release authorization.",
+    "Confirm redistribution terms for synthetic render/VLM artifacts.",
+    "Approve checkpoint release or document restricted availability.",
+    "Cross-check final typeset manuscript and table numbering; no manuscript file was supplied.",
+    "Assign actual repository commit/tag/URL after approval."
+  ]
+}

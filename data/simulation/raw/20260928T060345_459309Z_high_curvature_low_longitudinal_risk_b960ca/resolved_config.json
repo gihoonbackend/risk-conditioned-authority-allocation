@@ -1,0 +1,352 @@
+{
+  "schema_version": 1,
+  "config_version": "revision-canonical-d-v3-vlm-lateral-gain",
+  "selection_status": "Canonical-D v3. The shared-alpha baseline remains the v2 active-three-weight-renormalized implementation. The proposed separate-alpha lateral branch applies an archived-VLM path-wise curvature gain after the unchanged geometric curvature normalization.",
+  "simulation": {
+    "carla_version": "0.9.15",
+    "host": "127.0.0.1",
+    "port": 2100,
+    "timeout_s": 30.0,
+    "town": "Town04",
+    "reload_world_each_run": true,
+    "vehicle_blueprint": "vehicle.audi.a2",
+    "blueprint_attributes": {
+      "color": "168,0,27"
+    },
+    "synchronous_mode": true,
+    "fixed_delta_seconds": 0.05,
+    "substepping": true,
+    "max_substep_delta_time": 0.01,
+    "max_substeps": 10,
+    "no_rendering_mode": true,
+    "weather_preset": "ClearNoon",
+    "duration_s": 4.2,
+    "time_basis": "CARLA snapshot elapsed_seconds relative to first control snapshot",
+    "logging": "all control samples; fixed evaluation starts at 25 simulation seconds; first spatial path1 entry is logged separately",
+    "evaluation_start_s": 3.4,
+    "expected_control_samples": 84,
+    "expected_logged_sample_span_s": 4.15,
+    "actual_logged_duration_s": 4.200000062584877,
+    "spawn": {
+      "ego": {
+        "x": 294.8056335449219,
+        "y": 34.32356643676758,
+        "z": 0.5
+      },
+      "lead": {
+        "x": 339.1832275390625,
+        "y": 34.74341583251953,
+        "z": 0.5
+      },
+      "projection": "driving lane waypoint transform plus z_offset_m",
+      "z_offset_m": 1.0,
+      "initial_speed_mps": 0.0,
+      "settle_ticks": 1,
+      "clear_vehicle_actors_before_spawn": true,
+      "pre_spawn_settle_ticks": 1,
+      "retry_attempts": 3,
+      "retry_ticks": 2,
+      "retry_timeout_s": 2.0,
+      "initial_speed_mps_by_role": {
+        "ego": 20.0,
+        "lead": 22.0
+      },
+      "reference_anchor": {
+        "path": "path3-to-path1",
+        "ego_reference_point_index": 120,
+        "lead_reference_point_index": 6,
+        "purpose": "Provide Path3 warm-up followed by the fixed Path1 window. The approximately 41 m local controller gap yields low distance risk under the common 15 m risk normalizer."
+      }
+    },
+    "traffic_manager_used": false,
+    "pedestrians_used": false,
+    "camera_used": false,
+    "evaluation_end_s": 4.0
+  },
+  "artifacts": {
+    "path_reference": {
+      "relative_path": "scenarios/path_reference.json",
+      "sha256": "583ce47326225e502d4c48128cfd6aaba14fb0d73faaf573553bddd5ebe31e22",
+      "source_sha256": "583ce47326225e502d4c48128cfd6aaba14fb0d73faaf573553bddd5ebe31e22"
+    },
+    "vlm_weights": {
+      "relative_path": "vlm/vlm_path_weights.json",
+      "sha256": "9ff0b1925ec42400702b238c778543a8e36e41d06607ec21f524be49b571a557",
+      "source_sha256": "cf694e526e0b02dd0814c3bab7090bc9a5e2c9df0f5594a8360a867be1aa5464"
+    },
+    "rl_checkpoint": {
+      "relative_path": "checkpoints/residual_policy_rl_20260211_20260315_053633.pt",
+      "sha256": "91f9634d7e5f5ed27c27ce82944ae339737ba1a7f906d13c2aa16e80aec5de16",
+      "source_sha256": "91f9634d7e5f5ed27c27ce82944ae339737ba1a7f906d13c2aa16e80aec5de16"
+    }
+  },
+  "controller": {
+    "mode": "shared_alpha",
+    "vehicle_model": {
+      "m": 1500.0,
+      "Iz": 3000.0,
+      "lf": 1.2,
+      "lr": 1.6,
+      "Cf": 80000.0,
+      "Cr": 80000.0
+    },
+    "limits": {
+      "ax_min": -4.0,
+      "ax_max": 3.0,
+      "delta_max": 0.3
+    },
+    "ctg": {
+      "Tg": 1.6,
+      "d0": 5.0,
+      "Kp": 0.65,
+      "Kv": 0.45,
+      "Ts": 0.05,
+      "law": "clip(Kp*ed + Kv*(ed-ed_previous)/Ts, ax_min, ax_max); derivative=0 at first step",
+      "spacing_error": "d_bumper-(Tg*vx+d0)"
+    },
+    "mpc": {
+      "N": 20,
+      "max_iter": 10,
+      "Ts": 0.05,
+      "q1": 1.0,
+      "q2": 1.0,
+      "r": 5.0,
+      "step_size": 0.5,
+      "fd_eps": 0.01,
+      "v_ref_mps": 20.0,
+      "solver": "existing finite-difference projected gradient routine",
+      "terminal_cost": false,
+      "terminal_set": false,
+      "soft_constraints": false,
+      "reference": "Scenario-defined 20 m/s target for the high-curvature low-longitudinal-risk event; identical for all four architectures."
+    },
+    "lqr": {
+      "Q": [
+        3.0,
+        0.5,
+        6.0,
+        5.0
+      ],
+      "R": 5.0,
+      "nominal_speed_mps": 8.0,
+      "Ts": 0.05,
+      "rate_limit_radps": 2.0,
+      "ey_deadband_m": 0.05,
+      "epsi_deadband_rad": 0.05,
+      "hardcoded_parameters_policy": "verified against existing source; unsupported changes fail"
+    },
+    "rl": {
+      "device": "cpu",
+      "state_dim": 6,
+      "action_dim": 1,
+      "hidden_dim": 256,
+      "state": [
+        "ey",
+        "eydot",
+        "epsi",
+        "epsidot",
+        "vx",
+        "kappa_raw"
+      ],
+      "normalization": "checkpoint norm_mean/norm_var; denominator sqrt(var)+1e-6",
+      "action_bound_rad": 0.18,
+      "slew_limit_rad_per_step": 0.03,
+      "lpf_previous_coefficient": 0.6,
+      "filter_order": [
+        "actor_tanh_times_bound",
+        "saturation",
+        "slew",
+        "LPF",
+        "saturation"
+      ],
+      "online_adaptation": false,
+      "residual_authority_guard": {
+        "enabled": true,
+        "law": "When alpha_lat*residual opposes delta_LQR, retain at least minimum_lqr_retained_fraction of |delta_LQR|. When |delta_LQR| is below lqr_floor_rad, cap the effective residual.",
+        "minimum_lqr_retained_fraction": 0.5,
+        "lqr_floor_rad": 0.02,
+        "low_lqr_effective_bound_rad": 0.02,
+        "placement": "after residual amplitude/slew/LPF filter and alpha scaling; before final steering postprocess"
+      }
+    },
+    "steering_postprocess": {
+      "ey_deadband_m": 0.07,
+      "epsi_deadband_rad": 0.012,
+      "soft_ey_threshold_m": 0.35,
+      "soft_epsi_threshold_rad": 0.03,
+      "soft_min_scale": 0.25,
+      "gain": 1.0,
+      "sanity_clip_rad": 0.6,
+      "final_clip_rad": 0.3,
+      "carla_steer_clip": 1.0,
+      "carla_steer_rate_per_s": 1.0,
+      "large_ey_m": 0.3,
+      "large_epsi_rad": 0.15,
+      "large_error_rate_multiplier": 3.0,
+      "sign_change_rate_multiplier": 2.0,
+      "lpf_previous_coefficient": 0.7,
+      "sign_guard_enabled": false,
+      "order": [
+        "LQR+alpha*filtered_residual",
+        "deadband",
+        "soft_scale",
+        "sanity_clip",
+        "physical_clip",
+        "divide_by_delta_max",
+        "rate_limit",
+        "LPF",
+        "unit_clip"
+      ]
+    },
+    "acceleration_to_pedal_scale_mps2": 3.0,
+    "state_geometry": {
+      "source": "controllers/runtime/geometry.py",
+      "functions": [
+        "vehicle_half_length",
+        "distance_between",
+        "get_speed",
+        "distance_along_centerline",
+        "lock_to_ref_lane",
+        "get_ref_lane_waypoint",
+        "centerline_state"
+      ],
+      "ahead_distances_m": [
+        3.0,
+        6.0,
+        9.0,
+        12.0
+      ],
+      "distance_definition": "centerline projection if positive, otherwise Euclidean; subtract both vehicle half lengths for controller/risk",
+      "kappa_definition": "2*cross/(side_a*side_b*side_c) from first three lane-center waypoints"
+    },
+    "lead": {
+      "cruise_speed_mps": 15.0,
+      "lookahead_m": 8.0,
+      "heading_gain": 1.5,
+      "base_throttle": 0.3,
+      "speed_gain": 0.15
+    }
+  },
+  "risk": {
+    "formulation": "NORMALIZED",
+    "available_formulations": [
+      "ORIGINAL",
+      "NORMALIZED"
+    ],
+    "equations": {
+      "R_d": "d_safe_m/max(d_bumper_m, distance_floor_m)",
+      "R_v": "abs(v_lead_mps-vx_mps)/max(abs(vx_mps), speed_floor_mps)",
+      "R_kappa": "abs(clip(path_gain*kappa_raw, -kappa_clip, kappa_clip))/kappa_scale",
+      "R_ctrl": "sum(effective_active_weight_i*R_i)",
+      "alpha": "1/(1+exp(-k*(R_ctrl-R_th)))",
+      "kappa_used": "clip(path_gain^(p)*kappa_raw, -kappa_clip, kappa_clip)",
+      "R_d_raw": "d_safe_m/max(d_bumper_m, distance_floor_m)",
+      "R_v_raw": "abs(v_lead_mps-vx_mps)/max(abs(vx_mps), speed_floor_mps)",
+      "R_kappa_raw": "abs(kappa_used)/kappa_scale",
+      "R_i_norm": "clip(R_i_raw, 0, 1), i in {d, v, kappa}",
+      "R_shared": "sum_i((w_i/(w_d+w_v+w_kappa))*R_i_norm), i in {d, v, kappa}",
+      "R_lon": "(w_d*R_d_norm+w_v*R_v_norm)/(w_d+w_v)",
+      "g_kappa": "w_kappa^(p)/max_q(w_kappa^(q))",
+      "R_lat": "clip(g_kappa^(p)*R_kappa_norm, 0, 1)",
+      "alpha_c": "1/(1+exp(-k*(R_c-R_th))), c in {lon,lat}"
+    },
+    "d_safe_m": 15.0,
+    "distance_floor_m": 0.1,
+    "speed_floor_mps": 1.0,
+    "kappa_scale": 0.05,
+    "kappa_clip": 0.3,
+    "path_gains": {
+      "warmup": 1.0,
+      "path1": 40.0,
+      "path2": 20.0,
+      "path3": 1.0
+    },
+    "original_component_clipping": "none",
+    "normalized_component_clipping": [
+      0.0,
+      1.0
+    ],
+    "active_weight_policy": "RENORMALIZED",
+    "available_active_weight_policies": [
+      "CURRENT",
+      "RENORMALIZED"
+    ],
+    "renormalization_scope": "Shared baseline: active {d,v,kappa} weights are renormalized. Proposed longitudinal branch: raw archived w_d,w_v are renormalized over {d,v}. Proposed lateral branch: archived w_kappa is normalized by the maximum archived path-wise w_kappa after the unchanged geometric curvature normalization.",
+    "alpha_component_mode": "all",
+    "R_th": 0.5,
+    "k": 5.0,
+    "alpha_source": "revision_python_sigmoid_v1",
+    "cpp_alpha_fallback": "forbidden; bridge exposes component outputs only",
+    "path_resolution": {
+      "method": "nearest reference polyline within stored match radius",
+      "time_fallback": false,
+      "unmatched_before_first_path1": "explicit warmup only before evaluation_start_s, using path1 weights and warmup gain",
+      "warmup_weight_path": "path1",
+      "unmatched_after_first_path1": "fail run and preserve partial log",
+      "unmatched_after_evaluation_start": "fail run even if path1 has not been reached"
+    },
+    "canonical_risk_id": "canonical_D_normalized_active_weight_renormalized_v3_vlm_lateral_gain",
+    "separate_risk_definition": "channel_normalized",
+    "separate_lateral_vlm_gain_policy": "normalized_path_max",
+    "separate_lateral_vlm_gain_reference": "max_q(w_kappa^(q)) over archived path1/path2/path3 VLM weights",
+    "distance_scale_rationale": "d_safe_m=15 m yields R_d=0.5 at a 30 m bumper gap, close to the CTG reference gap at the 15 m/s baseline speed."
+  },
+  "experiment": {
+    "seed": 42,
+    "python_seed": 42,
+    "numpy_seed": 42,
+    "torch_seed": 42,
+    "python_hash_seed": 42,
+    "carla_related_seed": null,
+    "carla_seed_reason": "No traffic manager, pedestrians or stochastic sensors; no global CARLA physics seed API is used",
+    "torch_deterministic_algorithms": true,
+    "torch_num_threads": 1,
+    "scenario": "high_curvature_low_longitudinal_risk",
+    "controller_mode": "system2",
+    "smoke_scenarios": [
+      "nominal_following",
+      "emergency_stop",
+      "curvature_emergency",
+      "high_curvature_low_longitudinal_risk"
+    ],
+    "emergency": {
+      "trigger_time_s": 35.0,
+      "brake_ramp_s": 2.0,
+      "stop_hold_s": 8.0,
+      "recovery_speed_mps": 0.0,
+      "recovery_ramp_s": 3.0
+    },
+    "git_commit": "ee3a9ad7987564805d8671f4c72a1097b1bcc504",
+    "provenance_policy": "record runtime git state plus hashes and snapshots of every compiled/runtime source and input",
+    "cache_policy": "disabled; --force always creates a new run",
+    "output_root": "generated/runs",
+    "risk_scale_policy": "The v3 VLM curvature gain changes only the proposed separate-alpha lateral-risk construction. CTG, MPC, LQR, RL checkpoint/filter/guard, R_th, k, path reference, and archived VLM artifact remain fixed.",
+    "suite_stage": "canonical_d_v3_main_controller_comparison",
+    "suite_scenario_id": "high_curvature",
+    "scenario_description": "High-curvature/low-longitudinal-risk event. Ego and lead initialize at 20 and 22 m/s, respectively; the lead follows a fixed 24 m/s no-brake scenario target. Evaluation is the fixed 3.40--4.00 s Path1 window. The 20 m/s MPC reference is a scenario target shared by every architecture, not a controller-gain change.",
+    "lead_condition": {
+      "profile": "fixed_cruise_no_brake",
+      "cruise_speed_mps": 24.0,
+      "purpose": "Scenario input: maintain a lead speed close to the 20 m/s high-curvature target without emergency braking."
+    },
+    "suite_formulation": "canonical_d_v3_archived_vlm_normalized_lateral_gain",
+    "alpha_architecture": "system2",
+    "suite_architecture_id": "system2",
+    "suite_architecture_label": "MPC + LQR/RL",
+    "suite_modifier_id": "canonical_d_v3_vlm_lateral_gain"
+  },
+  "smoke_checks": {
+    "numeric_finite": true,
+    "require_path1_entry_for_nominal": true,
+    "require_single_alpha_source": true,
+    "duration_tolerance_s": 0.001,
+    "persistent_saturation_warning_s": 5.0,
+    "evaluation_saturation_warning_ratio": 0.25,
+    "alpha_bound": [
+      0.0,
+      1.0
+    ],
+    "ttc": "d_bumper/(vx-vlead) only when closing speed>0.001; null otherwise, not numeric failure"
+  },
+  "publication_adaptation": "Paths rebased; archived numerical parameters and experiment overrides preserved."
+}

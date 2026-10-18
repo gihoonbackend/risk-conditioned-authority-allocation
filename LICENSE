@@ -1,0 +1,25 @@
+LICENSE REVIEW REQUIRED
+
+This directory is a release candidate prepared for the research authors' review.
+No new open-source or open-data license is granted by this file.
+
+Original project code, documentation, configurations and generated research outputs:
+  Ownership and institutional/contractual redistribution authority were not established
+  by the audited artifacts. MIT or BSD-3-Clause is a proposed code-license choice only.
+
+Vehicle measurements and derived vehicle replay data:
+  Explicit recording-consent, institutional/project ownership and public-data release
+  permission records were not found. CC BY 4.0 is a proposed data-license choice only.
+  De-identification does not resolve ownership or consent requirements.
+
+Residual RL checkpoint:
+  Not included. The exact hash and deployment metadata are supplied in checkpoints/.
+  Redistribution requires confirmation from the authorized owner.
+
+Synthetic VLM snapshots and VLM response artifacts:
+  Preserve research provenance; confirm applicable simulator-asset and provider
+  redistribution terms before release.
+
+Third-party notices and licenses remain in force for their respective materials.
+See NOTICE and docs/CARLA_LICENSE.txt. The CARLA license does not establish the
+ownership or license of this project's untracked modifications or vehicle data.

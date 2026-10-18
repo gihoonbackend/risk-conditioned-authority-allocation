@@ -1,0 +1,31 @@
+{
+  "path_name": "path1",
+  "path_label": "Tight Curve",
+  "raw_response_text": "{\n  \"path_name\": \"path1\",\n  \"path_label\": \"Tight Curve\",\n  \"weights\": {\n    \"w_d\": 0.36,\n    \"w_v\": 0.34,\n    \"w_kappa\": 0.12,\n    \"w_s\": 0.10,\n    \"w_p\": 0.08\n  },\n  \"context_summary\": \"Scene appears to be a straight, multi-lane highway with clear lane markings and good visibility. Lead vehicle is present at ~32 m with near-zero relative speed, so primary risk is maintaining safe following distance and managing speed matching. Numeric curvature (kappa=0.0053) indicates only mild curvature; despite the 'Tight Curve' label, curvature weighting is kept secondary. Small lateral/heading errors suggest stable lane keeping; uncertainty weights remain low and non-dominant.\",\n  \"confidence\": 0.74\n}",
+  "parsed_response": {
+    "path_name": "path1",
+    "path_label": "Tight Curve",
+    "weights": {
+      "w_d": 0.36,
+      "w_v": 0.34,
+      "w_kappa": 0.12,
+      "w_s": 0.1,
+      "w_p": 0.08
+    },
+    "context_summary": "Scene appears to be a straight, multi-lane highway with clear lane markings and good visibility. Lead vehicle is present at ~32 m with near-zero relative speed, so primary risk is maintaining safe following distance and managing speed matching. Numeric curvature (kappa=0.0053) indicates only mild curvature; despite the 'Tight Curve' label, curvature weighting is kept secondary. Small lateral/heading errors suggest stable lane keeping; uncertainty weights remain low and non-dominant.",
+    "confidence": 0.74
+  },
+  "sanitized_response": {
+    "path_name": "path1",
+    "path_label": "Tight Curve",
+    "weights": {
+      "w_d": 0.36000000000000004,
+      "w_v": 0.3400000000000001,
+      "w_kappa": 0.12000000000000001,
+      "w_s": 0.10000000000000002,
+      "w_p": 0.08000000000000002
+    },
+    "context_summary": "Scene appears to be a straight, multi-lane highway with clear lane markings and good visibility. Lead vehicle is present at ~32 m with near-zero relative speed, so primary risk is maintaining safe following distance and managing speed matching. Numeric curvature (kappa=0.0053) indicates only mild curvature; despite the 'Tight Curve' label, curvature weighting is kept secondary. Small lateral/heading errors suggest stable lane keeping; uncertainty weights remain low and non-dominant.",
+    "confidence": 0.74
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "path_name": "path2",
+  "path_label": "Mild Curve",
+  "raw_response_text": "{\n  \"path_name\": \"path2\",\n  \"path_label\": \"Mild Curve\",\n  \"weights\": {\n    \"w_d\": 0.37,\n    \"w_v\": 0.34,\n    \"w_kappa\": 0.07,\n    \"w_s\": 0.12,\n    \"w_p\": 0.1\n  },\n  \"context_summary\": \"Multi-lane highway with a lead vehicle at ~32 m and essentially zero relative speed; gap error is modest and not immediately safety-critical. Numeric curvature (kappa=0.000217) indicates near-straight geometry despite the 'Mild Curve' label, so curvature weighting is reduced. Visibility appears somewhat hazy/low-contrast, so uncertainty-related weights are slightly increased while keeping them non-dominant.\",\n  \"confidence\": 0.72\n}",
+  "parsed_response": {
+    "path_name": "path2",
+    "path_label": "Mild Curve",
+    "weights": {
+      "w_d": 0.37,
+      "w_v": 0.34,
+      "w_kappa": 0.07,
+      "w_s": 0.12,
+      "w_p": 0.1
+    },
+    "context_summary": "Multi-lane highway with a lead vehicle at ~32 m and essentially zero relative speed; gap error is modest and not immediately safety-critical. Numeric curvature (kappa=0.000217) indicates near-straight geometry despite the 'Mild Curve' label, so curvature weighting is reduced. Visibility appears somewhat hazy/low-contrast, so uncertainty-related weights are slightly increased while keeping them non-dominant.",
+    "confidence": 0.72
+  },
+  "sanitized_response": {
+    "path_name": "path2",
+    "path_label": "Mild Curve",
+    "weights": {
+      "w_d": 0.37,
+      "w_v": 0.34,
+      "w_kappa": 0.07,
+      "w_s": 0.12,
+      "w_p": 0.1
+    },
+    "context_summary": "Multi-lane highway with a lead vehicle at ~32 m and essentially zero relative speed; gap error is modest and not immediately safety-critical. Numeric curvature (kappa=0.000217) indicates near-straight geometry despite the 'Mild Curve' label, so curvature weighting is reduced. Visibility appears somewhat hazy/low-contrast, so uncertainty-related weights are slightly increased while keeping them non-dominant.",
+    "confidence": 0.72
+  }
+}

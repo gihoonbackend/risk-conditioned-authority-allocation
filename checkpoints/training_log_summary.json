@@ -1,0 +1,15 @@
+{
+  "num_episodes": 100,
+  "timeouts": 67,
+  "timeout_ratio": 0.67,
+  "mean_steps": 3545.95,
+  "median_steps": 5000.0,
+  "max_steps": 5000,
+  "episodes_ge_2000": 69,
+  "episodes_ge_3000": 69,
+  "last10_mean_steps": 4956.5,
+  "last10_timeout_ratio": 0.9,
+  "last10_mean_rps": 2.6966088021642833,
+  "last10_mean_abs_ey": 0.1330528050661087,
+  "last10_mean_abs_epsi": 0.03652304820716381
+}

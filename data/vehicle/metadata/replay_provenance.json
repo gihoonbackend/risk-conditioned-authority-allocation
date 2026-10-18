@@ -1,0 +1,34 @@
+{
+  "source_output_sha256": "cb721b7064d8fe3c25649df56a49b4fa40fe2febbdc36a8de00e8fa82bd42fce",
+  "source_rows": 211503,
+  "retained_columns": [
+    "time_s",
+    "ego_speed_rear_mps",
+    "lead_distance_m",
+    "lead_speed_proxy_mps",
+    "ey_centered_m",
+    "epsi_rad",
+    "kappa_signed",
+    "ax_ctg",
+    "ax_mpc",
+    "dref_ctg_m",
+    "delta_lqr_rad",
+    "delta_residual_rad",
+    "ax_measured_g",
+    "ax_measured_mps2",
+    "steer_measured_raw_rad",
+    "steer_measured_aligned_rad",
+    "steer_align_k",
+    "steer_align_b"
+  ],
+  "omitted_obsolete_columns": [
+    "ax_ctg_mpc_blend",
+    "alpha",
+    "delta_lqr_rl_residual_rad"
+  ],
+  "upstream_raw_to_controller_output_generation": "Exact historical command and full transformation provenance not available.",
+  "reproduction_boundary": "Exact V3 replay from archived controller-output/state signals; not a claim of exact raw-to-controller inference reproduction.",
+  "mpc_column": "Archived ax_mpc retained; original generating implementation cannot be established from this CSV alone.",
+  "steering_comparison": "standardized trend; not physical steering angle error",
+  "v3_sampling": "first retained row per floor(time_s/0.05+1e-9) bin after sorting, as in final V3 generator"
+}

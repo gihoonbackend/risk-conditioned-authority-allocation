@@ -1,0 +1,16 @@
+{
+  "path_name": "path3",
+  "path_label": "Straight",
+  "image_path": "vlm/path_snapshots/path3_straight.png",
+  "meta_path": "vlm/path_snapshots/path3_straight.json",
+  "user_prompt": "Analyze this driving scene for the upcoming path segment and recommend hybrid-controller risk parameters.\n\nPath information:\n- path_name: path3\n- path_label: Straight\n\nSensor snapshot:\n- distance_m: 32.496720\n- distance_ref_m: 29.818877\n- gap_error_m: 2.677843\n- ego_speed_mps: 13.195942\n- lead_speed_mps: 13.128860\n- relative_speed_mps: 0.067082\n- kappa: -0.000000\n- ey_m: -0.054582\n- epsi_rad: -0.004763\n\nInterpretation guidance:\n- Treat the numeric kappa value as the primary curvature cue; do not overrule it unless the image clearly shows otherwise.\n- If kappa is near zero and the road visually looks straight, reduce w_kappa noticeably.\n- If kappa is materially larger than neighboring paths or the scene clearly bends, increase w_kappa.\n- Increase distance or relative-speed weighting if the lead vehicle gap appears safety-critical.\n- Increase uncertainty weighting only if visibility or lane confidence looks degraded.\n- If visibility is normal, keep w_s + w_p low.\n\nPrevious path recommendation (for smoothness; avoid unnecessary abrupt changes):\n- previous_w_d: 0.370000\n- previous_w_v: 0.340000\n- previous_w_kappa: 0.070000\n- previous_w_s: 0.120000\n- previous_w_p: 0.100000\n- Maintain smoothness, but do not preserve previous weights if the current kappa and image strongly indicate a different curvature level.\n\nGoal:\nProvide context-aware risk weights for this path segment only.\nReturn JSON only.",
+  "sensor_snapshot": {
+    "distance_m": 32.49672041069946,
+    "distance_ref_m": 29.81887691405373,
+    "ego_speed_mps": 13.195942150968794,
+    "lead_speed_mps": 13.128860025826635,
+    "kappa": -8.414144362783987e-08,
+    "ey_m": -0.05458171865736501,
+    "epsi_rad": -0.004762735112915362
+  }
+}

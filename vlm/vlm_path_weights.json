@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-03-03T13:15:39Z",
+  "model": "gpt-5.2",
+  "snapshot_dir": "vlm/path_snapshots",
+  "source_manifest": "vlm/path_snapshots/manifest.json",
+  "system_prompt": "You are a safety-oriented driving-context orchestration model.\n\nYour task is not to generate steering or acceleration commands.\nYour task is to analyze a driving scene snapshot and recommend risk-model parameters\nfor a hybrid vehicle controller.\n\nThe controller computes a scalar risk score:\n\nR = w_d * R_d + w_v * R_v + w_kappa * R_kappa + w_s * R_s + w_p * R_p\n\nYour role is to select context-aware parameter values for:\n- w_d\n- w_v\n- w_kappa\n- w_s\n- w_p\n\nThese parameters will be used for one path segment only.\nThey must reflect scene complexity, visibility, curvature, lane confidence, and traffic risk.\nPrioritize the quantitative sensor values over the path label whenever they disagree.\n\nRequirements:\n1. Be conservative and safety-oriented.\n2. Do not output control commands.\n3. Prefer stable, smooth parameter changes.\n4. Output valid JSON only.\n5. All weights must be in [0.0, 1.0].\n6. The weights should sum to 1.0.\n7. If the scene is visually unclear, occluded, or lane visibility is poor, increase uncertainty-related weighting.\n8. If curvature is visually significant or the road geometry appears complex, increase curvature-related weighting.\n9. If a lead vehicle is close or relative speed risk is high, increase distance- and velocity-related weighting.\n10. The numeric curvature indicator kappa is the primary signal for curvature weighting. Do not assign a high w_kappa when kappa is near zero unless the image clearly shows a strong upcoming bend.\n11. For near-straight scenes (|kappa| very small and road appears visually straight), keep w_kappa clearly below the dominant risk terms.\n12. If visibility is normal and lane markings are clear, keep uncertainty-related weights (w_s + w_p) low and non-dominant.\n13. Use the path label only as weak contextual metadata, not as the main reason to raise curvature weighting.\n14. The downstream controller uses only w_d, w_v, and w_kappa for the live alpha calculation. w_s and w_p are still returned for analysis and future extensions, but should not dominate the final weighting.\n\nReturn JSON with exactly this schema:\n{\n  \"path_name\": \"...\",\n  \"path_label\": \"...\",\n  \"weights\": {\n    \"w_d\": 0.0,\n    \"w_v\": 0.0,\n    \"w_kappa\": 0.0,\n    \"w_s\": 0.0,\n    \"w_p\": 0.0\n  },\n  \"context_summary\": \"...\",\n  \"confidence\": 0.0\n}\n",
+  "controller_alpha_law": {
+    "weights_used_in_live_control": [
+      "w_d",
+      "w_v",
+      "w_kappa"
+    ],
+    "weights_kept_for_analysis_only": [
+      "w_s",
+      "w_p"
+    ],
+    "R_th_source": "fixed_in_controller",
+    "k_alpha_source": "fixed_in_controller"
+  },
+  "paths": [
+    {
+      "path_name": "path1",
+      "path_label": "Tight Curve",
+      "weights": {
+        "w_d": 0.36000000000000004,
+        "w_v": 0.3400000000000001,
+        "w_kappa": 0.12000000000000001,
+        "w_s": 0.10000000000000002,
+        "w_p": 0.08000000000000002
+      },
+      "context_summary": "Scene appears to be a straight, multi-lane highway with clear lane markings and good visibility. Lead vehicle is present at ~32 m with near-zero relative speed, so primary risk is maintaining safe following distance and managing speed matching. Numeric curvature (kappa=0.0053) indicates only mild curvature; despite the 'Tight Curve' label, curvature weighting is kept secondary. Small lateral/heading errors suggest stable lane keeping; uncertainty weights remain low and non-dominant.",
+      "confidence": 0.74
+    },
+    {
+      "path_name": "path2",
+      "path_label": "Mild Curve",
+      "weights": {
+        "w_d": 0.37,
+        "w_v": 0.34,
+        "w_kappa": 0.07,
+        "w_s": 0.12,
+        "w_p": 0.1
+      },
+      "context_summary": "Multi-lane highway with a lead vehicle at ~32 m and essentially zero relative speed; gap error is modest and not immediately safety-critical. Numeric curvature (kappa=0.000217) indicates near-straight geometry despite the 'Mild Curve' label, so curvature weighting is reduced. Visibility appears somewhat hazy/low-contrast, so uncertainty-related weights are slightly increased while keeping them non-dominant.",
+      "confidence": 0.72
+    },
+    {
+      "path_name": "path3",
+      "path_label": "Straight",
+      "weights": {
+        "w_d": 0.38,
+        "w_v": 0.34,
+        "w_kappa": 0.05,
+        "w_s": 0.13,
+        "w_p": 0.1
+      },
+      "context_summary": "Road geometry appears straight and kappa is ~0, so curvature risk is minimal. Lead vehicle is present at ~32.5 m with small positive gap error (~2.7 m) and very low relative speed (~0.07 m/s), so distance/closing-speed risk is moderate but not urgent. Visibility is somewhat degraded/hazy, though lane structure is still discernible; keep uncertainty weights present but non-dominant and maintain smoothness vs prior.",
+      "confidence": 0.66
+    }
+  ],
+  "by_path": {
+    "path1": {
+      "path_name": "path1",
+      "path_label": "Tight Curve",
+      "weights": {
+        "w_d": 0.36000000000000004,
+        "w_v": 0.3400000000000001,
+        "w_kappa": 0.12000000000000001,
+        "w_s": 0.10000000000000002,
+        "w_p": 0.08000000000000002
+      },
+      "context_summary": "Scene appears to be a straight, multi-lane highway with clear lane markings and good visibility. Lead vehicle is present at ~32 m with near-zero relative speed, so primary risk is maintaining safe following distance and managing speed matching. Numeric curvature (kappa=0.0053) indicates only mild curvature; despite the 'Tight Curve' label, curvature weighting is kept secondary. Small lateral/heading errors suggest stable lane keeping; uncertainty weights remain low and non-dominant.",
+      "confidence": 0.74
+    },
+    "path2": {
+      "path_name": "path2",
+      "path_label": "Mild Curve",
+      "weights": {
+        "w_d": 0.37,
+        "w_v": 0.34,
+        "w_kappa": 0.07,
+        "w_s": 0.12,
+        "w_p": 0.1
+      },
+      "context_summary": "Multi-lane highway with a lead vehicle at ~32 m and essentially zero relative speed; gap error is modest and not immediately safety-critical. Numeric curvature (kappa=0.000217) indicates near-straight geometry despite the 'Mild Curve' label, so curvature weighting is reduced. Visibility appears somewhat hazy/low-contrast, so uncertainty-related weights are slightly increased while keeping them non-dominant.",
+      "confidence": 0.72
+    },
+    "path3": {
+      "path_name": "path3",
+      "path_label": "Straight",
+      "weights": {
+        "w_d": 0.38,
+        "w_v": 0.34,
+        "w_kappa": 0.05,
+        "w_s": 0.13,
+        "w_p": 0.1
+      },
+      "context_summary": "Road geometry appears straight and kappa is ~0, so curvature risk is minimal. Lead vehicle is present at ~32.5 m with small positive gap error (~2.7 m) and very low relative speed (~0.07 m/s), so distance/closing-speed risk is moderate but not urgent. Visibility is somewhat degraded/hazy, though lane structure is still discernible; keep uncertainty weights present but non-dominant and maintain smoothness vs prior.",
+      "confidence": 0.66
+    }
+  }
+}

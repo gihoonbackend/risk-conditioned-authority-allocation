@@ -1,0 +1,18 @@
+Third-party and source provenance
+
+CARLA is an external simulator dependency. No CARLA binaries, maps, LibCarla source,
+or Unreal Engine source are included. The VLM snapshots are synthetic CARLA renders.
+The locally archived CARLA MIT license is preserved in docs/CARLA_LICENSE.txt for
+attribution and review; it is not a license grant for all materials in this package.
+
+CTG/MPC/LQR sources and the Python runtime are copied or extracted from the project's
+V3 runtime source snapshot. Their file hashes and public adaptations are recorded
+in reproducibility/artifact_provenance.json. No existing source copyright or license
+notice has been removed. Original project-code licensing requires owner review.
+
+NumPy, pandas, matplotlib, Pillow, tabulate, PyYAML, PyTorch and CARLA Python API are
+dependencies installed separately and retain their own licenses. Their code or
+pretrained third-party weights are not vendored here.
+
+OpenAI model identifier gpt-5.2 appears in the archived VLM research artifact. No
+model weights, account credentials or API access are distributed.
