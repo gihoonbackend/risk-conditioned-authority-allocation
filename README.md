@@ -144,9 +144,6 @@ Conditional simulator commands and historical command confidence levels appear i
 
 Included: all 16 main and 20 controlled-variation V3 trajectories, final CSV metrics, replay outputs and inputs, de-identified numeric raw vehicle sequence, VLM records and synthetic snapshots. Files use lossless gzip where helpful. No raw real-road imagery, CARLA binary, optimizer cache or failed run is included. The checkpoint is withheld pending redistribution approval; its absence does not block offline figure/table reproduction.
 
-## Citation
-
-Authors: Gihoon Song, Hyeongjun Park, Guntae Kim, Minchang Kim and Changmook Kang. Cite the title shown above, reproducibility package version 1.0.0. [CITATION.cff](CITATION.cff) records the associated manuscript and intended journal. A DOI, acceptance status and repository URL have not been invented.
 
 ## License
 
