@@ -31,7 +31,7 @@ R_lat = clip(g_kappa[p] * R_kappa, 0, 1)
 alpha_c = 1 / (1 + exp(-5.0 * (R_c - 0.5))), c in {lon, lat}
 
 bar_w_i = w_i / (w_d + w_v + w_kappa)
-R_shared = bar_w_d*R_d + bar_w_v*R_v + bar_w_kappa*R_kappa
+R_shared = bar_w_d*R_d + bar_w_v*R_v + bar_w_kappa*R_kappa.
 Shared baseline: alpha_lon = alpha_lat = sigmoid(5.0*(R_shared-0.5))
 ```
 
